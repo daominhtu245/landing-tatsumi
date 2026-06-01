@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --primary: 200 98% 39%;        /* sky-600 #0284C7 */
+    --primary-foreground: 0 0% 100%;
+    --accent: 21 90% 53%;          /* orange-500 #F97316 */
+    --accent-foreground: 0 0% 100%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 200 98% 39%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "palt", "ss01";
+  }
+  ::selection { background: hsl(var(--primary) / 0.2); }
+  h1, h2, h3, h4 { @apply font-display tracking-tight; }
+}
+
+@layer components {
+  .container-tight { @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8; }
+  .container-wide { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+
+  .heading-eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary-600;
+  }
+  .heading-eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-gradient-to-r from-primary-500 to-accent-500;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-600/20 transition hover:bg-primary-700 hover:shadow-primary-600/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent-500/20 transition hover:bg-accent-600;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-primary-300 hover:text-primary-700;
+  }
+
+  .card-elevated {
+    @apply rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary-100 hover:shadow-xl;
+  }
+
+  .link-underline {
+    @apply relative inline-flex items-center gap-1 text-sm font-semibold text-primary-700 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-primary-600 after:transition-all hover:after:w-full;
+  }
+}
+
+/* Vertical Japanese text helper */
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
