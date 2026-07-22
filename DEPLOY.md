@@ -1,4 +1,4 @@
-# Deploy Guide — 辰巳協同組合 Landing
+# Deploy Guide — たつみ協同組合 Landing
 
 Hướng dẫn deploy landing page Tatsumi Cooperative lên production.
 

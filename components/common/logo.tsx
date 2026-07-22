@@ -22,7 +22,7 @@ export function Logo({ className, mark }: { className?: string; mark?: boolean }
       </span>
       {!mark && (
         <span className="flex flex-col leading-none">
-          <span className="text-base font-bold tracking-wider text-slate-900">辰巳協同組合</span>
+          <span className="text-base font-bold tracking-wider text-slate-900">たつみ協同組合</span>
           <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-primary-600">
             Tatsumi&nbsp;Coop
           </span>

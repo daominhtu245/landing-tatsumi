@@ -76,7 +76,7 @@ export function Hero() {
             <div className="relative h-full overflow-hidden rounded-[2rem] border border-white bg-white/60 p-8 shadow-2xl shadow-primary-900/10 backdrop-blur-xl">
               <div className="writing-vertical mx-auto text-[140px] font-black leading-none tracking-tighter">
                 <span className="bg-gradient-to-b from-primary-700 to-accent-500 bg-clip-text text-transparent">
-                  辰巳
+                  たつみ
                 </span>
               </div>
               <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-1 border-t border-slate-200 pt-4">

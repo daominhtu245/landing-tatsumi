@@ -9,7 +9,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 }
 
 const history = [
-  { year: '20XX', body: { ja: '辰巳協同組合 設立', en: 'Tatsumi Cooperative founded' } },
+  { year: '20XX', body: { ja: 'たつみ協同組合 設立', en: 'Tatsumi Cooperative founded' } },
   { year: '20XX+2', body: { ja: 'ベトナム送出機関と提携開始', en: 'Vietnam partnership established' } },
   { year: '20XX+5', body: { ja: '受入企業 50社突破', en: 'Surpassed 50 partner companies' } },
   { year: '2026', body: { ja: '監理団体許可 更新', en: 'Supervisory organization license renewed' } }

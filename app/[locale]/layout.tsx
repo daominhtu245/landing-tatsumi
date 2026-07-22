@@ -24,13 +24,13 @@ export default async function LocaleLayout({
   const orgSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: locale === 'ja' ? '辰巳協同組合' : 'Tatsumi Cooperative',
+    name: locale === 'ja' ? 'たつみ協同組合' : 'Tatsumi Cooperative',
     alternateName: 'Tatsumi Cooperative',
     url: `https://tatsumi-coop.example.jp/${locale}`,
     logo: 'https://tatsumi-coop.example.jp/logo.png',
     description:
       locale === 'ja'
-        ? '辰巳協同組合は技能実習・育成就労に対応する協同組合です。'
+        ? 'たつみ協同組合は技能実習・育成就労に対応する協同組合です。'
         : 'Tatsumi Cooperative supports both Technical Intern Training and the new Ikusei-Shuro program in Japan.',
     sameAs: ['https://instagram.com', 'https://facebook.com']
   };

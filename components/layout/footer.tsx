@@ -65,7 +65,7 @@ export function Footer() {
 
       <div className="border-t border-slate-200">
         <div className="container-wide flex flex-col items-start justify-between gap-2 py-6 text-xs text-slate-500 sm:flex-row sm:items-center">
-          <p>© {year} 辰巳協同組合 (Tatsumi Cooperative). {t('footer.rights')}</p>
+          <p>© {year} たつみ協同組合 (Tatsumi Cooperative). {t('footer.rights')}</p>
           <Link href="/privacy" className="hover:text-primary-700">{t('nav.privacy')}</Link>
         </div>
       </div>

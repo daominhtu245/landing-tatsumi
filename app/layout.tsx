@@ -19,11 +19,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://tatsumi-coop.example.jp'),
   title: {
-    default: '辰巳協同組合 | Tatsumi Cooperative',
-    template: '%s | 辰巳協同組合'
+    default: 'たつみ協同組合 | Tatsumi Cooperative',
+    template: '%s | たつみ協同組合'
   },
   description:
-    '辰巳協同組合 (Tatsumi Cooperative) — 技能実習・育成就労に対応する協同組合。受入企業と海外人材を信頼で結びます。'
+    'たつみ協同組合 (Tatsumi Cooperative) — 技能実習・育成就労に対応する協同組合。受入企業と海外人材を信頼で結びます。'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
