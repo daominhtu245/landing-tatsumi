@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <defs>
+    <linearGradient id="tatsumi" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="50%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#F97316" />
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="12" fill="url(#tatsumi)" />
+  <g transform="translate(4 4) scale(0.8)">
+    <path
+      d="M6 28 C 12 8, 28 32, 34 12"
+      fill="none"
+      stroke="#fff"
+      stroke-width="4"
+      stroke-linecap="round"
+    />
+    <circle cx="33.5" cy="12.5" r="2.8" fill="#fff" />
+  </g>
+</svg>

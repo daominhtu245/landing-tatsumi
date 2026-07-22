@@ -73,13 +73,15 @@ export function Hero() {
         <div className="relative hidden lg:flex">
           <div className="relative ml-auto h-full w-full max-w-sm">
             <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-primary-600/10 via-transparent to-accent-500/10" />
-            <div className="relative h-full overflow-hidden rounded-[2rem] border border-white bg-white/60 p-8 shadow-2xl shadow-primary-900/10 backdrop-blur-xl">
-              <div className="writing-vertical mx-auto text-[140px] font-black leading-none tracking-tighter">
-                <span className="bg-gradient-to-b from-primary-700 to-accent-500 bg-clip-text text-transparent">
-                  たつみ
-                </span>
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white bg-white/60 p-8 shadow-2xl shadow-primary-900/10 backdrop-blur-xl">
+              <div className="flex min-h-0 flex-1 items-center justify-center py-2">
+                <div className="writing-vertical text-[clamp(72px,9vw,120px)] font-black leading-none tracking-tighter">
+                  <span className="bg-gradient-to-b from-primary-700 to-accent-500 bg-clip-text text-transparent">
+                    たつみ
+                  </span>
+                </div>
               </div>
-              <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-1 border-t border-slate-200 pt-4">
+              <div className="mt-6 flex shrink-0 flex-col gap-1 border-t border-slate-200 pt-4">
                 <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-700">
                   Tatsumi
                 </span>

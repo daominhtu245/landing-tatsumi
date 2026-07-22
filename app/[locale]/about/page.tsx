@@ -8,13 +8,6 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   return { title: t('title'), description: t('subtitle') };
 }
 
-const history = [
-  { year: '20XX', body: { ja: 'たつみ協同組合 設立', en: 'Tatsumi Cooperative founded' } },
-  { year: '20XX+2', body: { ja: 'ベトナム送出機関と提携開始', en: 'Vietnam partnership established' } },
-  { year: '20XX+5', body: { ja: '受入企業 50社突破', en: 'Surpassed 50 partner companies' } },
-  { year: '2026', body: { ja: '監理団体許可 更新', en: 'Supervisory organization license renewed' } }
-];
-
 export default function AboutPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
   return <AboutContent locale={locale as 'ja' | 'en'} />;
@@ -35,8 +28,8 @@ function AboutContent({ locale }: { locale: 'ja' | 'en' }) {
           <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-gradient-to-br from-primary-100 to-accent-100">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
-              alt=""
+              src="https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?auto=format&fit=crop&w=800&h=1000&q=80"
+              alt={locale === 'ja' ? '広島・宮島の厳島神社 大鳥居' : 'The great torii of Itsukushima Shrine, Miyajima, Hiroshima'}
               className="h-full w-full object-cover"
             />
           </div>
@@ -75,30 +68,12 @@ function AboutContent({ locale }: { locale: 'ja' | 'en' }) {
         </div>
       </section>
 
-      {/* History */}
-      <section className="py-20 lg:py-28">
-        <div className="container-tight">
-          <span className="heading-eyebrow">{t('historyTitle')}</span>
-          <div className="mt-10 space-y-4">
-            {history.map((h) => (
-              <div
-                key={h.year}
-                className="grid grid-cols-[80px_1fr] gap-6 border-l-2 border-primary-200 py-4 pl-6 sm:grid-cols-[120px_1fr]"
-              >
-                <div className="text-lg font-bold text-primary-700">{h.year}</div>
-                <div className="text-sm text-slate-700 sm:text-base">{h.body[locale]}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Info table */}
       <section className="bg-slate-50 py-20 lg:py-28">
         <div className="container-tight">
           <span className="heading-eyebrow">{t('infoTitle')}</span>
           <dl className="mt-10 overflow-hidden rounded-3xl border border-slate-200 bg-white">
-            {(['name', 'address', 'founded', 'representative', 'license', 'business'] as const).map(
+            {(['name', 'address', 'representative', 'business'] as const).map(
               (k, i) => (
                 <div
                   key={k}

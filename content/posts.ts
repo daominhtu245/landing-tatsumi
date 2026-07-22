@@ -101,19 +101,17 @@ export const posts: Post[] = [
       en: 'Notice: office hours during Golden Week 2026'
     },
     excerpt: {
-      ja: '2026年4月29日(水)〜5月6日(水)はお休みとさせていただきます。緊急時の連絡先はこちら。',
-      en: 'Our office will be closed Apr 29 – May 6, 2026. Emergency contact details below.'
+      ja: '2026年4月29日(水)〜5月6日(水)はお休みとさせていただきます。',
+      en: 'Our office will be closed Apr 29 – May 6, 2026.'
     },
     body: {
       ja: [
         '誠に勝手ながら、下記期間中は休業とさせていただきます。',
-        '休業期間: 2026年4月29日(水) 〜 5月6日(水)',
-        '緊急時の連絡先: 080-XXXX-XXXX (24時間対応)'
+        '休業期間: 2026年4月29日(水) 〜 5月6日(水)'
       ],
       en: [
         'Please note that our office will be closed during the following period.',
-        'Closed: Wednesday, April 29 – Wednesday, May 6, 2026.',
-        'For emergencies: 080-XXXX-XXXX (24-hour line).'
+        'Closed: Wednesday, April 29 – Wednesday, May 6, 2026.'
       ]
     }
   },

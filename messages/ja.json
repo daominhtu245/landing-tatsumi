@@ -12,7 +12,7 @@
     "systems": "制度紹介",
     "tit": "技能実習制度",
     "ssw": "育成就労制度",
-    "news": "News",
+    "news": "ニュース",
     "recruitment": "採用情報",
     "contact": "お問い合わせ",
     "privacy": "プライバシーポリシー",
@@ -33,7 +33,7 @@
     "items": {
       "coop": {
         "title": "組合紹介",
-        "desc": "たつみ協同組合の理念・体制・許可番号をご案内。"
+        "desc": "たつみ協同組合の理念・体制をご案内。"
       },
       "tit": {
         "title": "技能実習制度",
@@ -45,22 +45,6 @@
       }
     },
     "more": "詳しく見る"
-  },
-  "stats": {
-    "eyebrow": "NUMBERS",
-    "title": "実績で示す信頼",
-    "items": {
-      "companies": "受入企業",
-      "trainees": "実習生",
-      "countries": "送出国",
-      "years": "支援年数"
-    },
-    "suffix": {
-      "companies": "社+",
-      "trainees": "名+",
-      "countries": "ヵ国",
-      "years": "年"
-    }
   },
   "usp": {
     "eyebrow": "OUR STRENGTH",
@@ -111,26 +95,21 @@
     "subtitle": "信頼で結ぶ、世界をつなぐ──たつみの歩み。",
     "greetingTitle": "代表ご挨拶",
     "greetingBody": "たつみ協同組合は、日本と海外を「信頼」でつなぐ橋となることを使命としています。私たちは単なる人材紹介ではなく、受入企業様の事業成長と、実習生一人ひとりの夢の実現を、共に支える存在でありたいと願っています。",
-    "greetingName": "代表理事 〇〇 〇〇",
+    "greetingName": "代表理事 永井伸枝",
     "missionTitle": "理念・ビジョン",
     "mission": {
       "vision": { "title": "Vision", "body": "アジアと日本の架け橋として、産業と人材の未来を共創する。" },
       "mission": { "title": "Mission", "body": "受入企業と実習生の双方に寄り添い、長期的な信頼関係を築く。" },
       "values": { "title": "Values", "body": "誠実・挑戦・成長。3つの価値で全てのステークホルダーに向き合う。" }
     },
-    "historyTitle": "沿革",
     "infoTitle": "組合情報",
     "info": {
       "name": "名称",
       "nameVal": "たつみ協同組合 (Tatsumi Cooperative)",
       "address": "所在地",
-      "addressVal": "東京都〇〇区〇〇1-2-3",
-      "founded": "設立",
-      "foundedVal": "20XX年4月",
+      "addressVal": "広島県広島市西区観音本町２丁目1-50",
       "representative": "代表理事",
-      "representativeVal": "〇〇 〇〇",
-      "license": "許可番号",
-      "licenseVal": "外国人技能実習機構 許可番号: XXXXXXXX",
+      "representativeVal": "永井伸枝",
       "business": "事業内容",
       "businessVal": "外国人技能実習生受入事業、育成就労支援事業、研修事業"
     }
@@ -221,7 +200,7 @@
     "submitted": "送信が完了しました。担当者より折り返しご連絡いたします。",
     "infoTitle": "連絡先",
     "accessTitle": "アクセス",
-    "accessBody": "東京メトロ〇〇駅から徒歩5分、JR〇〇駅から徒歩10分。"
+    "accessBody": "JR西広島駅から徒歩15分、広島電鉄西観音町駅から徒歩5分。"
   },
   "privacy": {
     "title": "プライバシーポリシー",

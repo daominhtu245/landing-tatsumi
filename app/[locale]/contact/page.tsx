@@ -67,7 +67,7 @@ function ContactContent() {
           <div className="aspect-[16/9] overflow-hidden rounded-3xl border border-slate-100 bg-white">
             <iframe
               title="Access map"
-              src="https://www.google.com/maps?q=Tokyo+Station&output=embed"
+              src="https://www.google.com/maps?q=%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%BA%83%E5%B3%B6%E5%B8%82%E8%A5%BF%E5%8C%BA%E8%A6%B3%E9%9F%B3%E6%9C%AC%E7%94%BA%EF%BC%92%E4%B8%81%E7%9B%AE1-50&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="h-full w-full"

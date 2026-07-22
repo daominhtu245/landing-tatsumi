@@ -31,27 +31,11 @@
     "title": "What we do",
     "subtitle": "We answer both the operational needs of our partner companies and the dreams of every trainee we welcome.",
     "items": {
-      "coop": { "title": "About the Cooperative", "desc": "Our mission, organization, and operating license." },
+      "coop": { "title": "About the Cooperative", "desc": "Our mission and organization." },
       "tit": { "title": "Technical Intern Training", "desc": "Eligible jobs, full intake flow, up to 5 years in Japan." },
       "ssw": { "title": "Ikusei-Shuro System", "desc": "Full coverage for Japan's 2027 reformed program." }
     },
     "more": "Learn more"
-  },
-  "stats": {
-    "eyebrow": "NUMBERS",
-    "title": "Track record you can trust",
-    "items": {
-      "companies": "Partner companies",
-      "trainees": "Trainees placed",
-      "countries": "Sending countries",
-      "years": "Years of service"
-    },
-    "suffix": {
-      "companies": "+",
-      "trainees": "+",
-      "countries": "",
-      "years": " yrs"
-    }
   },
   "usp": {
     "eyebrow": "OUR STRENGTH",
@@ -102,26 +86,21 @@
     "subtitle": "Bridging trust, connecting the world — the Tatsumi story.",
     "greetingTitle": "From our Representative",
     "greetingBody": "Tatsumi Cooperative exists to be a bridge of trust between Japan and the world. We see ourselves not as a recruiter, but as a partner who walks alongside both the companies we serve and the trainees who place their futures in our hands.",
-    "greetingName": "Representative Director, ○○ ○○",
+    "greetingName": "Representative Director, 永井伸枝",
     "missionTitle": "Mission & Vision",
     "mission": {
       "vision": { "title": "Vision", "body": "Co-creating the future of industry and talent across Asia and Japan." },
       "mission": { "title": "Mission", "body": "Walk with both companies and trainees to build long-term, trust-based relationships." },
       "values": { "title": "Values", "body": "Integrity. Challenge. Growth. The three values that guide every interaction." }
     },
-    "historyTitle": "History",
     "infoTitle": "Organization",
     "info": {
       "name": "Name",
       "nameVal": "Tatsumi Cooperative (たつみ協同組合)",
       "address": "Address",
-      "addressVal": "1-2-3 ○○, ○○-ku, Tokyo, Japan",
-      "founded": "Founded",
-      "foundedVal": "April 20XX",
+      "addressVal": "広島県広島市西区観音本町２丁目1-50",
       "representative": "Representative Director",
-      "representativeVal": "○○ ○○",
-      "license": "License",
-      "licenseVal": "OTIT License No.: XXXXXXXX",
+      "representativeVal": "永井伸枝",
       "business": "Business",
       "businessVal": "Technical intern intake, Ikusei-Shuro support, training services"
     }
@@ -212,7 +191,7 @@
     "submitted": "Thank you — we'll reply shortly.",
     "infoTitle": "Contact info",
     "accessTitle": "Access",
-    "accessBody": "5 min walk from ○○ Station (Tokyo Metro), 10 min from JR ○○ Station."
+    "accessBody": "15 min walk from JR Nishi-Hiroshima Station, 5 min from Nishi-Kannonmachi Station (Hiroshima Electric Railway)."
   },
   "privacy": {
     "title": "Privacy Policy",
