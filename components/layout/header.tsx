@@ -40,14 +40,21 @@ export function Header() {
       ]
     },
     {
+      label: t('business'),
+      items: [
+        { label: t('businessTop'), href: '/business' },
+        { label: t('licensing'), href: '/licensing' }
+      ]
+    },
+    {
       label: t('systems'),
       items: [
         { label: t('tit'), href: '/system/ginou-jisshu' },
-        { label: t('ssw'), href: '/system/ikusei-shuro' }
+        { label: t('ssw'), href: '/system/ikusei-shuro' },
+        { label: t('ssk'), href: '/system/tokutei-ginou' }
       ]
     },
     { label: t('news'), href: '/news' },
-    { label: t('recruitment'), href: '/recruitment' },
     { label: t('contact'), href: '/contact' }
   ];
 

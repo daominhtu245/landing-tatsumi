@@ -19,10 +19,15 @@ EXCLUDE='--exclude-dir=node_modules --exclude-dir=.next --exclude-dir=_archive'
 RED=$'\033[31m'; YEL=$'\033[33m'; GRN=$'\033[32m'; DIM=$'\033[2m'; RST=$'\033[0m'
 violations=0
 
+# check <ERROR|WARN> <pattern> <reason> [allow_pattern]
+#   allow_pattern: dòng khớp mẫu này được coi là hợp lệ và bỏ qua.
 check() {
-  local level="$1" pattern="$2" reason="$3"
+  local level="$1" pattern="$2" reason="$3" allow="${4:-}"
   local hits
   hits=$(grep -rnE $EXCLUDE "$pattern" "${SCAN_DIRS[@]}" 2>/dev/null)
+  if [ -n "$allow" ] && [ -n "$hits" ]; then
+    hits=$(echo "$hits" | grep -vE "$allow" || true)
+  fi
   if [ -n "$hits" ]; then
     if [ "$level" = "ERROR" ]; then
       printf '%s✗ ERROR%s  %s\n' "$RED" "$RST" "$reason"
@@ -55,9 +60,12 @@ check ERROR '365日'                             'Cam kết mức dịch vụ 36
 check ERROR 'お見積り(は)?無料'                  'Báo giá dịch vụ chưa được phép'
 
 echo "── 3. Tài liệu chỉ được công khai sau khi có phép ──────────"
-check ERROR '業務運営規程'                      '業務運営規程 chỉ được công khai sau khi có phép'
-check ERROR '監理支援費表'                      '監理支援費表 chỉ được công khai sau khi có phép'
-check ERROR '秘密の保持に関する規程'             '個人情報規程 chỉ được công khai sau khi có phép'
+# Cho phép NÊU TÊN tài liệu kèm ghi chú「許可取得後に公開」(trang /licensing,
+# quyết định D-2). Vẫn chặn nếu công khai nội dung tài liệu.
+DOC_ALLOW='許可取得後に公開|to be published after authorization'
+check ERROR '業務運営規程'          '業務運営規程 bị công khai trước khi có phép'   "$DOC_ALLOW"
+check ERROR '監理支援費表'          '監理支援費表 bị công khai trước khi có phép'   "$DOC_ALLOW"
+check ERROR '秘密の保持に関する規程' '個人情報規程 bị công khai trước khi có phép'   "$DOC_ALLOW"
 
 echo "── 4. Dữ liệu giả / rác kỹ thuật ───────────────────────────"
 check ERROR '03-0000-0000'                      'Số điện thoại giả'
@@ -87,9 +95,19 @@ required() {
 }
 required '許可申請'                        'Có nhắc trạng thái 許可申請中'
 required '現時点では監理支援事業を行っておりません'  'Có câu tuyên bố chưa hoạt động (nguyên văn KH)'
-required '082-909-4208'                    'Có số điện thoại thật'
-required 'info@ta23\.net'                  'Có email thật'
-required '733-0033'                        'Có mã bưu chính'
+# Thông tin liên hệ được khai báo tập trung ở lib/site-config.ts
+required_any() {
+  local pattern="$1" reason="$2"
+  if grep -rqE $EXCLUDE "$pattern" "${SCAN_DIRS[@]}" 2>/dev/null; then
+    printf '%s✓%s      %s\n' "$GRN" "$RST" "$reason"
+  else
+    printf '%s✗ ERROR%s  THIẾU: %s\n' "$RED" "$RST" "$reason"
+    violations=$((violations + 1))
+  fi
+}
+required_any '082-909-4208'                'Có số điện thoại thật'
+required_any 'info@ta23\.net'              'Có email thật'
+required_any '733-0033'                    'Có mã bưu chính'
 echo
 
 echo "════════════════════════════════════════════════════════════"

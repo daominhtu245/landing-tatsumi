@@ -1,12 +1,12 @@
 import { useTranslations } from 'next-intl';
-import { ArrowUpRight, Building2, GraduationCap, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Building2, ShoppingBasket, FileCheck2 } from 'lucide-react';
 import { Link } from '@/lib/navigation';
 import { SectionHeading } from '@/components/common/section-heading';
 
 const items = [
   { key: 'coop', icon: Building2, href: '/about', color: 'from-primary-500 to-primary-700' },
-  { key: 'tit', icon: GraduationCap, href: '/system/ginou-jisshu', color: 'from-primary-400 to-accent-500' },
-  { key: 'ssw', icon: Sparkles, href: '/system/ikusei-shuro', color: 'from-accent-400 to-accent-600' }
+  { key: 'business', icon: ShoppingBasket, href: '/business', color: 'from-primary-400 to-accent-500' },
+  { key: 'licensing', icon: FileCheck2, href: '/licensing', color: 'from-accent-400 to-accent-600' }
 ] as const;
 
 export function AboutPreview() {

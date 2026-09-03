@@ -1,12 +1,12 @@
 import { useTranslations } from 'next-intl';
-import { Headphones, Briefcase, ShieldCheck, Rocket } from 'lucide-react';
+import { MapPin, ShoppingBasket, ShieldCheck, BookOpen } from 'lucide-react';
 import { SectionHeading } from '@/components/common/section-heading';
 
 const items = [
-  { key: 'support', Icon: Headphones },
-  { key: 'experience', Icon: Briefcase },
+  { key: 'local', Icon: MapPin },
+  { key: 'purchase', Icon: ShoppingBasket },
   { key: 'compliance', Icon: ShieldCheck },
-  { key: 'ssw', Icon: Rocket }
+  { key: 'study', Icon: BookOpen }
 ] as const;
 
 export function UspGrid() {

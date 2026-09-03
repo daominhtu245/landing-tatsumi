@@ -1,6 +1,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from '@/lib/navigation';
+import { Logo } from '@/components/common/logo';
 import type { Post } from '@/content/posts';
 import { formatDate, cn } from '@/lib/utils';
 
@@ -23,13 +24,22 @@ export function PostCard({ post, featured }: { post: Post; featured?: boolean })
       )}
     >
       <div className={cn('relative overflow-hidden bg-slate-100', featured ? 'md:w-2/5' : 'aspect-[16/10]')}>
-        {/* Using img for simplicity vs next/image requiring config */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={post.cover}
-          alt=""
-          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-        />
+        {post.cover ? (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src={post.cover}
+            alt=""
+            className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+          />
+        ) : (
+          /* Không dùng ảnh stock: nền chuyển sắc theo design system */
+          <div
+            className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary-50 via-white to-accent-50"
+            aria-hidden
+          >
+            <Logo mark />
+          </div>
+        )}
       </div>
       <div className={cn('flex flex-col gap-3 p-6', featured && 'md:flex-1 md:p-8')}>
         <div className="flex items-center gap-3 text-xs">

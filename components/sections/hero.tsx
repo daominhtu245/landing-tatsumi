@@ -56,8 +56,8 @@ export function Hero() {
               {t('ctaContact')}
               <ArrowRight className="ml-2 h-4 w-4 transition group-hover:translate-x-0.5" />
             </Link>
-            <Link href="/recruitment" className="btn-ghost">
-              {t('ctaRecruit')}
+            <Link href="/about" className="btn-ghost">
+              {t('ctaAbout')}
             </Link>
           </div>
 

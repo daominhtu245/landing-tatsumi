@@ -31,7 +31,7 @@ export const FEATURES = {
   socialLinks: false,
   /** Mục lọc blog ở /news — bật khi có bài viết thật */
   blog: false,
-  /** 業務運営規程 / 監理支援費表 / 個人情報規程 — CHỈ được công khai sau khi có phép */
+  /** 3 tài liệu bắt buộc công khai — CHỈ được công khai sau khi có phép (xem trang /licensing) */
   publicDocuments: isApproved,
 } as const;
 

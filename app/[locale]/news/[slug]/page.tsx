@@ -73,15 +73,17 @@ function Article({ slug }: { slug: string }) {
       </section>
 
       {/* Cover */}
-      <div className="container-tight -mt-10 mb-12">
-        <div className="aspect-[16/8] overflow-hidden rounded-3xl shadow-xl">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={post.cover} alt="" className="h-full w-full object-cover" />
+      {post.cover && (
+        <div className="container-tight -mt-10 mb-12">
+          <div className="aspect-[16/8] overflow-hidden rounded-3xl shadow-xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={post.cover} alt="" className="h-full w-full object-cover" />
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Body */}
-      <article className="container-tight pb-20">
+      <article className="container-tight pb-20 pt-12">
         <div className="prose-content mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-slate-800">
           {post.body[locale].map((p, i) => (
             <p key={i}>{p}</p>

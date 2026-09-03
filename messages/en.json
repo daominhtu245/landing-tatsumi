@@ -2,200 +2,366 @@
   "brand": {
     "name": "Tatsumi Cooperative",
     "nameRomaji": "たつみ協同組合",
-    "tagline": "Bridging trust, connecting the world"
+    "tagline": "Mutual support for local businesses"
+  },
+  "common": {
+    "preparing": "In preparation",
+    "openInMaps": "Open in Google Maps",
+    "sourceLabel": "Source",
+    "backToTop": "Back to top"
+  },
+  "notice": {
+    "applying": "The supervising and support business (Technical Intern Training / Ikusei-Shuro / Specified Skilled Worker) is currently under application for authorization with the relevant authorities. It is scheduled to begin only after authorization is granted; at present we do not conduct this business.",
+    "applyingShort": "Authorization application in progress",
+    "detailLink": "Learn more"
   },
   "nav": {
     "home": "Home",
-    "about": "About",
-    "aboutCoop": "About the Cooperative",
+    "about": "About us",
+    "aboutCoop": "Organization profile",
     "access": "Access",
+    "business": "Our activities",
+    "businessTop": "Our activities",
+    "licensing": "Supervising & support business",
     "systems": "Programs",
     "tit": "Technical Intern Training",
-    "ssw": "Ikusei-Shuro (New System)",
+    "ssw": "Ikusei-Shuro",
+    "ssk": "Specified Skilled Worker",
     "news": "News",
-    "recruitment": "Careers",
     "contact": "Contact",
-    "privacy": "Privacy Policy",
-    "switchLang": "JA"
+    "privacy": "Privacy policy",
+    "switchLang": "日本語"
   },
   "hero": {
-    "eyebrow": "Foreign workforce partner",
-    "title1": "Connecting people,",
-    "title2": "shaping tomorrow.",
-    "subtitle": "Tatsumi Cooperative connects talented professionals from Vietnam and beyond with Japan's leading manufacturers. We support both the Technical Intern Training and the new Ikusei-Shuro programs end-to-end, with care for companies and trainees alike.",
-    "ctaContact": "Contact Us",
-    "ctaRecruit": "View Careers"
+    "eyebrow": "A business cooperative in Nishi-ku, Hiroshima",
+    "title1": "Built on trust,",
+    "title2": "alongside our members.",
+    "subtitle": "Tatsumi Cooperative is based in Nishi-ku, Hiroshima. Through joint purchasing and related activities, we support the business operations of our member companies. We are also currently applying for authorization to conduct a supervising and support business relating to the Technical Intern Training program, the Ikusei-Shuro program, and the Specified Skilled Worker status.",
+    "ctaContact": "Contact us",
+    "ctaAbout": "About the cooperative"
   },
   "aboutPreview": {
     "eyebrow": "ABOUT",
-    "title": "What we do",
-    "subtitle": "We answer both the operational needs of our partner companies and the dreams of every trainee we welcome.",
+    "title": "About Tatsumi Cooperative",
+    "subtitle": "Our organizational profile and the activities we currently carry out.",
     "items": {
-      "coop": { "title": "About the Cooperative", "desc": "Our mission and organization." },
-      "tit": { "title": "Technical Intern Training", "desc": "Eligible jobs, full intake flow, up to 5 years in Japan." },
-      "ssw": { "title": "Ikusei-Shuro System", "desc": "Full coverage for Japan's 2027 reformed program." }
+      "coop": {
+        "title": "Organization profile",
+        "desc": "Our purpose, principles and corporate details."
+      },
+      "business": {
+        "title": "Our activities",
+        "desc": "Joint purchasing and other activities we currently conduct."
+      },
+      "licensing": {
+        "title": "Supervising & support business",
+        "desc": "Our position on the three programs (authorization application in progress)."
+      }
     },
-    "more": "Learn more"
+    "more": "Read more"
   },
   "usp": {
-    "eyebrow": "OUR STRENGTH",
-    "title": "Why teams choose Tatsumi",
+    "eyebrow": "OUR APPROACH",
+    "title": "How we work",
     "items": {
-      "support": { "title": "24/7 multilingual support", "desc": "Japanese, Vietnamese, and English support 365 days a year." },
-      "experience": { "title": "Deep field experience", "desc": "From manufacturing to agriculture, proven across industries." },
-      "compliance": { "title": "Compliance first", "desc": "Transparent operations aligned with OTIT audit standards." },
-      "ssw": { "title": "Ikusei-Shuro ready", "desc": "Long-term career planning aligned to the new system." }
+      "local": {
+        "title": "Rooted locally",
+        "desc": "Our office is in Nishi-ku, Hiroshima, working alongside local businesses."
+      },
+      "purchase": {
+        "title": "Joint purchasing",
+        "desc": "Mutual support in procurement through joint purchasing by our members."
+      },
+      "compliance": {
+        "title": "Legal compliance",
+        "desc": "We adhere to the Small and Medium-sized Enterprise Cooperatives Act and related legislation."
+      },
+      "study": {
+        "title": "Following the programs",
+        "desc": "We aim to provide accurate general information on the three programs. (Supervising and support business: authorization application in progress.)"
+      }
     }
   },
   "news": {
-    "eyebrow": "NEWS & BLOG",
-    "title": "Latest from Tatsumi",
-    "subtitle": "Field stories and industry insights, fresh every week.",
+    "eyebrow": "NEWS",
+    "title": "News",
+    "subtitle": "Announcements from Tatsumi Cooperative.",
     "viewAll": "View all",
     "categories": {
       "all": "All",
       "info": "Notice",
-      "blog": "Blog",
+      "blog": "Article",
       "event": "Event"
     },
     "readMore": "Read more",
     "publishedOn": "Published",
-    "relatedTitle": "Related articles"
+    "relatedTitle": "Related notices"
   },
   "social": {
     "eyebrow": "FOLLOW US",
-    "title": "Our daily life on social",
-    "subtitle": "Behind-the-scenes from the field, updated weekly.",
+    "title": "Find us on social media",
+    "subtitle": "Updates from the cooperative.",
     "follow": "Follow"
   },
   "ctaBanner": {
-    "title": "Start the conversation. We'll handle the rest.",
-    "subtitle": "Our advisors will craft a plan tailored to your industry and roles.",
-    "button": "Go to contact form"
+    "title": "For any questions about the cooperative, please get in touch.",
+    "subtitle": "We welcome enquiries about our activities and about joining as a member.",
+    "button": "Go to the contact form"
   },
   "footer": {
     "rights": "All rights reserved.",
-    "address": "広島県広島市西区観音本町２丁目1-50",
-    "tel": "TEL: +81-3-0000-0000",
-    "email": "info@ta23.net",
-    "hours": "Hours: Mon–Fri 9:00–18:00 JST",
-    "sitemap": "Sitemap"
+    "sitemap": "Sitemap",
+    "contactHeading": "Contact",
+    "labels": {
+      "address": "Address",
+      "tel": "Tel",
+      "email": "Email",
+      "hours": "Opening hours"
+    }
   },
   "about": {
-    "title": "About the Cooperative",
-    "subtitle": "Bridging trust, connecting the world — the Tatsumi story.",
-    "greetingTitle": "From our Representative",
-    "greetingBody": "Tatsumi Cooperative exists to be a bridge of trust between Japan and the world. We see ourselves not as a recruiter, but as a partner who walks alongside both the companies we serve and the trainees who place their futures in our hands.",
-    "greetingName": "Representative Director, 永井伸枝",
-    "missionTitle": "Mission & Vision",
+    "title": "Organization profile",
+    "subtitle": "About Tatsumi Cooperative",
+    "greetingTitle": "Message",
+    "greetingBody": "Tatsumi Cooperative is a business cooperative established under the Small and Medium-sized Enterprise Cooperatives Act. Founded on mutual support among our member businesses, our purpose is to support their operations through joint purchasing and related activities. We move forward steadily, together with the businesses of our region.",
+    "greetingNameLabel": "Representative Director",
+    "missionTitle": "Purpose and principles",
     "mission": {
-      "vision": { "title": "Vision", "body": "Co-creating the future of industry and talent across Asia and Japan." },
-      "mission": { "title": "Mission", "body": "Walk with both companies and trainees to build long-term, trust-based relationships." },
-      "values": { "title": "Values", "body": "Integrity. Challenge. Growth. The three values that guide every interaction." }
+      "purpose": {
+        "title": "Purpose",
+        "body": "Grounded in mutual support among members, we work to stabilise and strengthen their business foundations."
+      },
+      "policy": {
+        "title": "Policy",
+        "body": "We undertake activities that are genuinely worth doing jointly, placing our members' interests first."
+      },
+      "stance": {
+        "title": "Stance",
+        "body": "We comply with applicable legislation and strive for sound, transparent governance."
+      }
     },
-    "infoTitle": "Organization",
+    "infoTitle": "Organization details",
     "info": {
       "name": "Name",
       "nameVal": "Tatsumi Cooperative (たつみ協同組合)",
       "address": "Address",
-      "addressVal": "広島県広島市西区観音本町２丁目1-50",
+      "tel": "Telephone",
+      "email": "Email",
+      "established": "Established",
+      "capital": "Capital",
+      "memberCount": "Members",
       "representative": "Representative Director",
-      "representativeVal": "永井伸枝",
-      "business": "Business",
-      "businessVal": "Technical intern intake, Ikusei-Shuro support, training services"
-    }
+      "businessArea": "Area of operation",
+      "business": "Activities",
+      "businessVal": "Joint purchasing and other activities set out in our articles of association"
+    },
+    "businessNote": "* The supervising and support business relating to the Technical Intern Training, Ikusei-Shuro and Specified Skilled Worker programs is currently under application for authorization."
+  },
+  "business": {
+    "title": "Our activities",
+    "subtitle": "What we currently do",
+    "introTitle": "Overview",
+    "introBody": "Tatsumi Cooperative carries out the activities set out in its articles of association, for the purpose of mutual support among its member businesses.",
+    "purchaseTitle": "Joint purchasing",
+    "purchaseBody": "By purchasing goods required by our members collectively, we seek greater efficiency and reduced burden in procurement — achieving as a cooperative what would be difficult for an individual business alone.",
+    "purchasePreparing": "Details of the items handled will be published on this page once ready.",
+    "licensingTitle": "Supervising and support business",
+    "licensingBody": "We are currently in the process of applying to the relevant authorities for authorization to conduct a supervising and support business relating to the Technical Intern Training, Ikusei-Shuro and Specified Skilled Worker programs.",
+    "licensingCta": "Learn more",
+    "joinTitle": "Joining the cooperative",
+    "joinBody": "Businesses considering membership are welcome to contact us via the enquiry form or by telephone.",
+    "joinCta": "Contact us"
+  },
+  "licensing": {
+    "title": "Supervising and support business",
+    "subtitle": "Our position on the Technical Intern Training, Ikusei-Shuro and Specified Skilled Worker programs",
+    "statementTitle": "Our position on the Technical Intern Training, Ikusei-Shuro and Specified Skilled Worker programs",
+    "statementBody1": "We are currently in the process of applying for authorization to conduct a supervising and support business relating to the Technical Intern Training program, the Ikusei-Shuro program and the Specified Skilled Worker status.",
+    "statementBody2": "That business is scheduled to begin only after authorization has been granted by the relevant authorities. At present, we do not conduct a supervising and support business.",
+    "statusTitle": "Current status",
+    "status": {
+      "stateLabel": "Status",
+      "stateVal": "Authorization application in progress",
+      "startLabel": "Start of operations",
+      "startVal": "Scheduled after authorization is granted",
+      "nowLabel": "At present",
+      "nowVal": "We do not conduct a supervising and support business"
+    },
+    "futureDocsTitle": "Documents to be published after authorization is granted",
+    "futureDocs": {
+      "doc1": "Copy of the regulations on the proper management of personal information and confidentiality (to be published after authorization)",
+      "doc2": "Business operation regulations (to be published after authorization)",
+      "doc3": "Schedule of supervising and support fees (to be published after authorization)"
+    },
+    "futureDocsNote": "The documents above will be published on this page once authorization has been granted by the relevant authorities.",
+    "systemsTitle": "About the programs",
+    "systemsBody": "General information on each program is available on the pages below."
   },
   "tit": {
     "title": "Technical Intern Training",
-    "subtitle": "Five years to grow a skill — and a life.",
-    "overviewTitle": "Program overview",
-    "overviewBody": "The Technical Intern Training Program transfers Japan's skills and know-how to talent from developing nations, supporting their home countries' economic growth. Trainees spend up to five years learning on-the-job in Japan.",
-    "industriesTitle": "Eligible industries",
-    "flowTitle": "Intake flow",
-    "faqTitle": "FAQ",
+    "subtitle": "A general overview of the program",
+    "overviewTitle": "What is the Technical Intern Training program?",
+    "overviewBody": "The Technical Intern Training program was established to transfer Japanese skills, techniques and knowledge to people from developing countries, contributing to the economic development of their home countries. Across categories 1, 2 and 3, the program allows a maximum stay of five years.",
+    "industriesTitle": "Main fields covered",
+    "industriesNote": "* Eligible occupations and tasks are prescribed by law and reviewed periodically. Please refer to publications by the relevant authorities for the latest details.",
+    "flowTitle": "General flow of the program",
+    "flowNote": "* This illustrates the general flow prescribed by the program.",
+    "faqTitle": "Frequently asked questions about the program",
     "faq": {
-      "q1": "How long until trainees arrive?",
-      "a1": "Typically 6–8 months from application to arrival, including pre-departure Japanese training, health checks, and visa.",
-      "q2": "What does it cost?",
-      "a2": "Costs depend on headcount and role. Quotes are free — get in touch.",
-      "q3": "What Japanese level do trainees have?",
-      "a3": "JLPT N5–N4 on arrival, with continuous learning support after placement.",
-      "q4": "What's required of the host company?",
-      "a4": "Any law-abiding company that can assign qualified instructors and a life-skills supervisor is welcome, regardless of industry or size."
-    }
+      "q1": "How long is the period of stay?",
+      "a1": "Across categories 1, 2 and 3, the program allows a maximum of five years. Requirements are prescribed for each category.",
+      "q2": "Which occupations are covered?",
+      "a2": "Eligible occupations and tasks are prescribed by law and reviewed periodically. Please refer to publications by the relevant authorities for the latest details.",
+      "q3": "Are there Japanese-language requirements?",
+      "a3": "This varies by occupation and category. In some fields, such as nursing care, language requirements apply at entry.",
+      "q4": "What happens with the transition to Ikusei-Shuro?",
+      "a4": "Transitional measures accompanying the launch of the Ikusei-Shuro program are set out in the relevant legislation and published guidelines."
+    },
+    "sourceNote": "Source: compiled as general information from materials published by the Immigration Services Agency, the Ministry of Health, Labour and Welfare, and OTIT.",
+    "disclaimer": "This page provides a general explanation of the program. It does not indicate that this cooperative conducts a supervising and support business; that business is currently under application for authorization."
   },
   "ssw": {
-    "title": "Ikusei-Shuro System",
-    "subtitle": "Japan's reformed 2027 program — built for talent and retention.",
-    "overviewTitle": "What is Ikusei-Shuro?",
-    "overviewBody": "Launching in 2027, Ikusei-Shuro is Japan's new foreign-talent program. Designed to balance training and workforce continuity, it grants three years of development with a clear path to the Specified Skilled Worker (SSW) status.",
-    "diffTitle": "vs. Technical Intern Training",
+    "title": "Ikusei-Shuro",
+    "subtitle": "A general overview of the program",
+    "overviewTitle": "What is the Ikusei-Shuro program?",
+    "overviewBody": "The Ikusei-Shuro program was created to succeed the Technical Intern Training program and is scheduled to take effect by 2027. It aims to balance workforce development with workforce continuity, with a training period leading to transition into the Specified Skilled Worker status.",
+    "diffTitle": "Main differences from Technical Intern Training",
     "diff": {
-      "header": ["Aspect", "Technical Intern Training", "Ikusei-Shuro"],
+      "header": [
+        "Item",
+        "Technical Intern Training",
+        "Ikusei-Shuro"
+      ],
       "rows": [
-        ["Purpose", "Skill transfer (international cooperation)", "Training + workforce retention"],
-        ["Duration", "Up to 5 years", "3 years (path to SSW)"],
-        ["Job transfer", "Generally not allowed", "Allowed under certain conditions"],
-        ["Japanese level", "Flexible", "Progressively stricter"]
+        [
+          "Purpose",
+          "Skills transfer (international contribution)",
+          "Workforce development + workforce continuity"
+        ],
+        [
+          "Period of stay",
+          "Up to 5 years",
+          "3 years in principle (transition to SSW envisaged)"
+        ],
+        [
+          "Changing employer",
+          "Not permitted in principle",
+          "To be permitted under certain conditions"
+        ],
+        [
+          "Japanese-language requirement",
+          "Varies by occupation",
+          "Staged requirements to be introduced"
+        ]
       ]
     },
-    "benefitsTitle": "Benefits for companies",
-    "benefits": {
-      "long": { "title": "Long-term career design", "desc": "Move from Ikusei-Shuro to SSW for 10+ years of employment." },
-      "skill": { "title": "Stronger Japanese skills", "desc": "Stepwise Japanese requirements lift on-the-job communication." },
-      "stable": { "title": "Stable retention", "desc": "Clear paths translate into higher retention and morale." }
+    "pointsTitle": "Key points of the program",
+    "points": {
+      "period": {
+        "title": "Period of stay",
+        "desc": "A training period of three years in principle, with transition into the Specified Skilled Worker status envisaged."
+      },
+      "transfer": {
+        "title": "Changing employer",
+        "desc": "The program is being designed to permit transfers at the person's own initiative under certain conditions."
+      },
+      "japanese": {
+        "title": "Language requirements",
+        "desc": "The program is being designed to introduce staged Japanese-language requirements."
+      }
     },
-    "scheduleTitle": "Implementation timeline"
+    "scheduleTitle": "Timeline towards implementation",
+    "scheduleNote": "* An outlook based on information published to date; subject to change.",
+    "sourceNote": "Source: compiled as general information from materials published by the Immigration Services Agency and the Ministry of Health, Labour and Welfare.",
+    "disclaimer": "This page provides a general explanation of the program. It does not indicate that this cooperative conducts a supervising and support business; that business is currently under application for authorization."
+  },
+  "ssk": {
+    "title": "Specified Skilled Worker",
+    "subtitle": "A general overview of the residence status",
+    "overviewTitle": "What is Specified Skilled Worker?",
+    "overviewBody": "Specified Skilled Worker is a residence status created in 2019 to accept foreign nationals with a certain level of expertise and skill in fields facing serious labour shortages. Skill level and Japanese-language ability are confirmed through examinations prescribed for each field.",
+    "levelsTitle": "Categories 1 and 2",
+    "levels": {
+      "n1": {
+        "title": "Category 1",
+        "desc": "For work requiring skills that call for a substantial degree of knowledge or experience. The period of stay is capped at five years in total."
+      },
+      "n2": {
+        "title": "Category 2",
+        "desc": "For work requiring proficient skills. There is no overall cap on renewals of the period of stay."
+      }
+    },
+    "fieldsTitle": "Fields covered",
+    "fieldsBody": "Covered fields include nursing care, construction, agriculture and manufacturing, among others. Fields are added and revised as the system is amended.",
+    "fieldsNote": "* Covered fields and their requirements are reviewed periodically. Please refer to publications by the relevant authorities for the latest details.",
+    "diffTitle": "Differences from Technical Intern Training and Ikusei-Shuro",
+    "diff": {
+      "header": [
+        "Item",
+        "Technical Intern Training",
+        "Ikusei-Shuro",
+        "Specified Skilled Worker"
+      ],
+      "rows": [
+        [
+          "Positioning",
+          "Skills transfer (international contribution)",
+          "Workforce development + continuity",
+          "Accepting people with established skills"
+        ],
+        [
+          "Period of stay",
+          "Up to 5 years",
+          "3 years in principle",
+          "Cat. 1: 5 years total / Cat. 2: no cap"
+        ],
+        [
+          "Skill level",
+          "Acquired through training",
+          "Acquired through development",
+          "Confirmed by examination"
+        ]
+      ]
+    },
+    "sourceNote": "Source: compiled as general information from materials published by the Immigration Services Agency.",
+    "disclaimer": "This page provides a general explanation of the residence status. It does not indicate that this cooperative conducts a supervising and support business; that business is currently under application for authorization."
   },
   "newsPage": {
-    "title": "News & Blog",
-    "subtitle": "Updates, field reports, and industry trends from Tatsumi.",
-    "empty": "No articles match this filter yet."
-  },
-  "recruitment": {
-    "title": "Careers",
-    "subtitle": "Recruitment — building tomorrow, together.",
-    "forCompanyTitle": "For companies",
-    "forCompanyBody": "Considering hiring foreign talent? Reach out and we'll tailor a plan to your industry, scale, and roles.",
-    "forCompanyCta": "Company inquiries",
-    "forCandidateTitle": "For candidates",
-    "forCandidateBody": "If you want to build a skill and a career in Japan, we'd love to meet you. From language training to settlement support, we have you covered.",
-    "forCandidateCta": "Apply now",
-    "processTitle": "Hiring process",
-    "process": {
-      "step1": { "title": "Apply / Inquire", "desc": "Reach out via the form or by phone." },
-      "step2": { "title": "Interview", "desc": "Online or on-site interviews and selection." },
-      "step3": { "title": "Training", "desc": "Japanese language training and departure prep in your home country." },
-      "step4": { "title": "Arrival & placement", "desc": "End-to-end support after entry into Japan." }
-    }
+    "title": "News",
+    "subtitle": "Announcements from Tatsumi Cooperative.",
+    "empty": "No matching notices were found."
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "We typically reply within 3 business days.",
-    "formTitle": "Inquiry form",
+    "subtitle": "We welcome enquiries about our activities and about joining the cooperative.",
+    "formTitle": "Enquiry form",
     "fields": {
       "name": "Name",
-      "company": "Company",
+      "company": "Company / organisation",
       "email": "Email",
-      "phone": "Phone",
+      "phone": "Telephone",
       "subject": "Subject",
       "message": "Message",
-      "required": "Required"
+      "required": "This field is required"
     },
     "subjectOptions": {
-      "company": "Hiring inquiry",
-      "candidate": "Candidate / Application",
+      "coop": "About the cooperative / joint purchasing",
+      "system": "About the programs",
       "other": "Other"
     },
     "submit": "Send",
-    "submitted": "Thank you — we'll reply shortly.",
-    "infoTitle": "Contact info",
+    "sending": "Sending…",
+    "submitted": "Your message has been sent. We will get back to you shortly.",
+    "errorTitle": "Could not send your message",
+    "errorBody": "Please contact us directly by telephone or email.",
+    "consent": "Personal data you submit is used solely to respond to your enquiry. See our privacy policy for details.",
+    "infoTitle": "Contact details",
     "accessTitle": "Access",
-    "accessBody": "15 min walk from JR Nishi-Hiroshima Station, 5 min from Nishi-Kannonmachi Station (Hiroshima Electric Railway)."
+    "accessBody": "Our office is located at 2-1-50 Kannon-honmachi, Nishi-ku, Hiroshima-shi, Hiroshima."
   },
   "privacy": {
-    "title": "Privacy Policy",
-    "subtitle": "Privacy Policy",
-    "lastUpdated": "Last updated: April 1, 2026"
+    "title": "Privacy policy",
+    "subtitle": "How we handle personal data",
+    "lastUpdated": "Last updated: 4 September 2026"
   }
 }
