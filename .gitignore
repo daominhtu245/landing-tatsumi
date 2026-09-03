@@ -9,3 +9,6 @@ next-env.d.ts.bak
 
 # Claude Code workspace (not part of the deployed project)
 .claude/
+
+# TypeScript incremental build cache
+*.tsbuildinfo
