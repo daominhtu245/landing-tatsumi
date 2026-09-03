@@ -4,7 +4,7 @@
 |---|---|
 | Nguồn | `feedback.md` (tin nhắn KH, tiếng Nhật) + audit toàn bộ codebase |
 | Ngày | 2026-09-03 |
-| Trạng thái | **CHỜ CONFIRM — chưa chỉnh sửa 1 dòng code nào** |
+| Trạng thái | ✅ **ĐÃ TRIỂN KHAI XONG (2026-09-04)** — xem `docs/IMPLEMENTATION-REPORT.md` |
 | Base commit | `bf84715` (master) |
 | Phạm vi audit | 12 route, 14 component, 2 file message, 9 bài viết, config SEO |
 
