@@ -200,6 +200,12 @@ docker run -p 3000:3000 --restart unless-stopped tatsumi-coop
 
 ## 7. Static export (host trên S3, Cloudflare Pages, GitHub Pages)
 
+> ⚠️ **Không còn dùng được nguyên trạng.** Từ khi form liên hệ nối vào
+> `app/api/contact/route.ts`, project có API route nên `output: 'export'` sẽ lỗi.
+> Nếu bắt buộc phải host tĩnh: xoá `app/api/contact/`, đổi form sang dịch vụ
+> ngoài (Formspree/Web3Forms) hoặc chuyển form thành `mailto:`. Khuyến nghị
+> dùng Vercel (§4) để giữ được form gửi mail thật.
+
 Vì toàn bộ trang đều SSG, có thể export ra HTML thuần để host trên **bất kỳ static host nào**.
 
 Thêm vào `next.config.mjs`:
@@ -244,55 +250,94 @@ npm run build         # sinh thư mục `out/`
 
 ## 9. Environment variables
 
-Hiện project **chưa cần env var nào** để chạy. Khi tích hợp các phần dưới đây, tạo `.env.local` (đã `.gitignore`) hoặc cấu hình ở dashboard Vercel/Netlify:
+Site chạy được mà **không cần env var nào** — nhưng khi đó form liên hệ sẽ
+không gửi được mail (trả 503 và hiển thị SĐT/email để liên hệ trực tiếp).
 
-| Biến | Khi nào cần |
-|---|---|
-| `NEXT_PUBLIC_SITE_URL` | Khi đổi domain — cập nhật `metadataBase` ở `app/layout.tsx` |
-| `CONTACT_FORM_ENDPOINT` | Khi nối form submit thật (Formspree / Resend / SendGrid) |
-| `NEXT_PUBLIC_GA_ID` | Khi gắn Google Analytics |
-| `NEXT_PUBLIC_GMAP_API_KEY` | Khi muốn dùng Google Maps JS API (hiện đang dùng iframe miễn phí) |
+Để form gửi mail thật về `info@ta23.net`, tạo `.env.local` (đã `.gitignore`)
+hoặc khai báo trong dashboard Vercel/Netlify:
+
+| Biến | Bắt buộc | Mô tả |
+|---|:---:|---|
+| `SMTP_HOST` | ✅ | Máy chủ SMTP của `ta23.net` (VD `mail.ta23.net`) |
+| `SMTP_PORT` | — | Mặc định `587`. Dùng `465` nếu SSL trực tiếp |
+| `SMTP_USER` | ✅ | Thường là `info@ta23.net` |
+| `SMTP_PASS` | ✅ | Mật khẩu hộp thư — **không commit vào git** |
+| `SMTP_SECURE` | — | `true`/`false`. Bỏ trống → tự suy ra từ port (465 = true) |
+| `CONTACT_TO` | — | Địa chỉ nhận. Mặc định `SITE.email` trong `lib/site-config.ts` |
+| `CONTACT_FROM` | — | Địa chỉ gửi. Mặc định `SMTP_USER` |
+| `NEXT_PUBLIC_GA_ID` | — | Khi gắn Google Analytics |
+
+Ví dụ `.env.local`:
+
+```bash
+SMTP_HOST=mail.ta23.net
+SMTP_PORT=587
+SMTP_USER=info@ta23.net
+SMTP_PASS=********
+CONTACT_TO=info@ta23.net
+```
+
+> **Thông tin tổ chức (domain, TEL, địa chỉ, email) KHÔNG nằm trong env var** —
+> tất cả khai báo tập trung tại `lib/site-config.ts`.
 
 ---
 
 ## 10. Checklist trước khi go-live
 
-- [ ] Cập nhật `metadataBase` ở `app/layout.tsx` thành domain thật
-- [ ] Cập nhật `BASE` ở `app/sitemap.ts` và `app/robots.ts`
-- [ ] Cập nhật `sameAs` (Instagram/Facebook URLs) ở `app/[locale]/layout.tsx` (JSON-LD)
-- [ ] Thay link social thật ở `components/layout/footer.tsx` và `components/sections/social-feed.tsx`
-- [ ] Thay địa chỉ + 許可番号 + email + TEL ở `messages/ja.json` và `messages/en.json`
-- [ ] Thay Google Maps iframe URL ở `app/[locale]/contact/page.tsx` (đổi `q=Tokyo+Station` thành địa chỉ thật)
-- [ ] Thay ảnh placeholder Unsplash bằng ảnh thật trong `public/images/` và update các thẻ `<img src>`
-- [ ] Thay logo placeholder ở `components/common/logo.tsx` bằng logo SVG/PNG chính thức
-- [ ] Nối contact form vào endpoint thật (hiện chỉ `console.log`) — xem mục 11
-- [ ] Gắn Google Analytics / Search Console
-- [ ] Submit sitemap.xml lên Google Search Console: `https://your-domain/sitemap.xml`
-- [ ] Kiểm tra Lighthouse (mục tiêu: SEO ≥ 90, Accessibility ≥ 90)
-- [ ] Kiểm tra responsive trên mobile thật (360px, 414px)
+### Bắt buộc — tuân thủ hồ sơ 許可申請
+
+```bash
+bash scripts/check-compliance.sh    # phải PASS (0 ERROR) mới được deploy
+```
+
+- [ ] `scripts/check-compliance.sh` trả về PASS
+- [ ] `lib/site-config.ts` → `LICENSE_STATUS` đúng với thực tế (`applying` cho tới khi có phép)
+- [ ] Trang `/licensing` hiển thị đúng nguyên văn đoạn tuyên bố của khách hàng
+- [ ] Không có trang nào công khai nội dung 3 tài liệu chỉ được đăng sau khi có phép
+
+### Cấu hình
+
+- [ ] `SITE.domain` trong `lib/site-config.ts` khớp domain thật đang trỏ
+- [ ] Điền `ORG_PROFILE` (設立年月日 / 出資金 / 組合員数 / 代表理事 / 事業区域 / 営業時間) khi khách hàng cung cấp — chưa điền thì site hiển thị 「準備中」
+- [ ] Khai báo biến SMTP (§9) rồi gửi thử form một lần từ production
+- [ ] Thay logo placeholder ở `components/common/logo.tsx` bằng logo chính thức
+- [ ] Khi có tài khoản SNS thật: điền `socialLinks` (footer) + `SOCIAL` (social-feed) rồi bật `FEATURES.socialLinks` / `FEATURES.socialFeed`
+
+### Kỹ thuật
+
+- [ ] `npm run build` không lỗi
+- [ ] Kiểm tra 2 ngôn ngữ × toàn bộ trang, responsive 360px / 414px
+- [ ] Submit sitemap lên Google Search Console: `https://ta23.net/sitemap.xml`
+- [ ] Lighthouse: SEO ≥ 90, Accessibility ≥ 90
 
 ---
 
-## 11. Nối contact form vào endpoint thật
+## 11. Contact form — cách hoạt động
 
-Hiện form ở `components/forms/contact-form.tsx` chỉ `console.log`. Khi go-live, đổi `onSubmit` để gọi service thật. Các lựa chọn:
+Form đã nối vào API route thật: `app/api/contact/route.ts`.
 
-- **Formspree / Web3Forms / FormSubmit** — không cần backend, free tier OK
-- **Resend / SendGrid** — gửi email qua API (cần Next.js API route)
-- **Google Forms / Notion** — đơn giản, không tốn phí
-
-Ví dụ với Formspree:
-
-```ts
-const onSubmit = async (data: FormValues) => {
-  const res = await fetch('https://formspree.io/f/<your-id>', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify(data)
-  });
-  if (res.ok) setSubmitted(true);
-};
 ```
+components/forms/contact-form.tsx
+   └─ POST /api/contact
+        └─ nodemailer → SMTP (§9) → info@ta23.net
+```
+
+Hành vi theo từng tình huống:
+
+| Tình huống | HTTP | Người dùng thấy |
+|---|:---:|---|
+| Gửi thành công | 200 | 「送信が完了しました」 |
+| Chưa cấu hình SMTP | 503 | Thông báo lỗi **kèm SĐT và email** để liên hệ trực tiếp |
+| SMTP lỗi khi gửi | 502 | như trên |
+| Dữ liệu không hợp lệ | 400 | Lỗi ngay tại field |
+| Quá 5 lần / 10 phút / IP | 429 | như trường hợp lỗi |
+| Bot điền vào honeypot | 200 | im lặng bỏ qua, không gửi mail |
+
+> **Nguyên tắc:** form **không bao giờ** báo「送信が完了しました」khi mail chưa thực sự
+> được gửi. Bản trước chỉ `setTimeout(800)` rồi báo thành công — đã sửa.
+
+Chống spam: honeypot (`website`) + rate limit trong bộ nhớ. Nếu bị spam nhiều,
+cân nhắc thêm Cloudflare Turnstile hoặc hCaptcha.
 
 ---
 

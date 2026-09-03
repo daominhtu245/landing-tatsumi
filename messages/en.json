@@ -357,7 +357,8 @@
     "consent": "Personal data you submit is used solely to respond to your enquiry. See our privacy policy for details.",
     "infoTitle": "Contact details",
     "accessTitle": "Access",
-    "accessBody": "Our office is located at 2-1-50 Kannon-honmachi, Nishi-ku, Hiroshima-shi, Hiroshima."
+    "accessBody": "Our office is located at 2-1-50 Kannon-honmachi, Nishi-ku, Hiroshima-shi, Hiroshima.",
+    "privacyLink": "Privacy policy"
   },
   "privacy": {
     "title": "Privacy policy",
