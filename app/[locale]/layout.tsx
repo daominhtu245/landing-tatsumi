@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import { locales, type Locale } from '@/i18n';
+import { SITE } from '@/lib/site-config';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
@@ -21,18 +22,29 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
 
+  // Dữ liệu có cấu trúc: chỉ khai báo sự thật kiểm chứng được.
+  // KHÔNG khai báo tư cách 監理支援機関 khi chưa có giấy phép.
   const orgSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: locale === 'ja' ? 'たつみ協同組合' : 'Tatsumi Cooperative',
-    alternateName: 'Tatsumi Cooperative',
-    url: `https://tatsumi-coop.example.jp/${locale}`,
-    logo: 'https://tatsumi-coop.example.jp/logo.png',
+    alternateName: locale === 'ja' ? 'Tatsumi Cooperative' : 'たつみ協同組合',
+    url: `${SITE.domain}/${locale}`,
     description:
       locale === 'ja'
-        ? 'たつみ協同組合は技能実習・育成就労に対応する協同組合です。'
-        : 'Tatsumi Cooperative supports both Technical Intern Training and the new Ikusei-Shuro program in Japan.',
-    sameAs: ['https://instagram.com', 'https://facebook.com']
+        ? 'たつみ協同組合は、広島市西区を拠点に共同購買事業などを行う中小企業等協同組合です。'
+        : 'Tatsumi Cooperative is a business cooperative based in Nishi-ku, Hiroshima, engaged in joint purchasing and related activities.',
+    telephone: SITE.tel,
+    email: SITE.email,
+    address: {
+      '@type': 'PostalAddress',
+      postalCode: SITE.postalCode,
+      addressCountry: 'JP',
+      addressRegion: locale === 'ja' ? '広島県' : 'Hiroshima',
+      addressLocality: locale === 'ja' ? '広島市西区' : 'Nishi-ku, Hiroshima-shi',
+      streetAddress: locale === 'ja' ? '観音本町2丁目1-50' : '2-1-50 Kannon-honmachi'
+    },
+    hasMap: SITE.mapUrl
   };
 
   return (

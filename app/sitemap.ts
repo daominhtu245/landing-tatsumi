@@ -1,22 +1,25 @@
 import type { MetadataRoute } from 'next';
 import { locales } from '@/i18n';
 import { getAllPosts } from '@/content/posts';
+import { SITE } from '@/lib/site-config';
 
-const BASE = 'https://tatsumi-coop.example.jp';
+const BASE = SITE.domain;
 
 const routes = [
   '',
   '/about',
+  '/business',
+  '/licensing',
   '/system/ginou-jisshu',
   '/system/ikusei-shuro',
+  '/system/tokutei-ginou',
   '/news',
-  '/recruitment',
   '/contact',
   '/privacy'
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = '2026-06-01';
+  const lastModified = new Date().toISOString().slice(0, 10);
 
   const staticEntries = locales.flatMap((locale) =>
     routes.map((route) => ({

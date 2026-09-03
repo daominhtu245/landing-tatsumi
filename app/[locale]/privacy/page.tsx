@@ -11,7 +11,7 @@ const sections = {
   ja: [
     {
       heading: '1. 個人情報の取得と利用目的',
-      body: '当組合は、お問い合わせ、応募、サービス提供等の業務遂行に必要な範囲で個人情報を取得し、利用目的の範囲内でのみ取り扱います。'
+      body: '当組合は、お問い合わせへの対応および組合の事業運営に必要な範囲で個人情報を取得し、取得の際にお知らせした利用目的の範囲内でのみ取り扱います。'
     },
     {
       heading: '2. 個人情報の第三者提供',
@@ -27,13 +27,13 @@ const sections = {
     },
     {
       heading: '5. お問い合わせ窓口',
-      body: '本ポリシーに関するお問い合わせは、お問い合わせフォームよりお寄せください。'
+      body: '本ポリシーに関するお問い合わせは、お問い合わせフォーム、お電話（082-909-4208）またはメール（info@ta23.net）にてお寄せください。'
     }
   ],
   en: [
     {
       heading: '1. Collection and use of personal data',
-      body: 'We collect personal data only to the extent required for inquiries, applications, and service delivery, and we use it only for those purposes.'
+      body: 'We collect personal data only to the extent required to respond to enquiries and to operate the cooperative, and we use it only for the purposes notified at the time of collection.'
     },
     {
       heading: '2. Disclosure to third parties',
@@ -49,7 +49,7 @@ const sections = {
     },
     {
       heading: '5. Contact',
-      body: 'For questions regarding this policy, please reach out via our contact form.'
+      body: 'For questions regarding this policy, please contact us via the enquiry form, by telephone (+81-82-909-4208) or by email (info@ta23.net).'
     }
   ]
 };
