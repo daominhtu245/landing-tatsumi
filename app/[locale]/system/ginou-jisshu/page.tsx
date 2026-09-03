@@ -1,6 +1,7 @@
 import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import { useLocale, useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/common/page-header';
+import { SystemDisclaimer } from '@/components/common/system-disclaimer';
 import {
   Wrench, Tractor, ChefHat, Hammer, Factory, Stethoscope, Truck, Building2,
   ChevronRight
@@ -22,12 +23,16 @@ const industries = [
   { key: 'building', Icon: Building2, ja: 'ビル管理', en: 'Building maintenance' }
 ];
 
+/**
+ * Trình tự chung do CHẾ ĐỘ quy định — không phải quy trình dịch vụ của tổ chức.
+ * Cách diễn đạt cố ý giữ ở thể trung lập (không dùng 「当組合が〜します」).
+ */
 const flow = [
-  { ja: 'お申込み・ヒアリング', en: 'Inquiry & needs analysis' },
-  { ja: '現地面接・選考', en: 'On-site interviews' },
-  { ja: '母国での日本語教育', en: 'Pre-departure Japanese training' },
-  { ja: '入国・配属', en: 'Arrival & placement' },
-  { ja: '配属後フォロー', en: 'Post-placement support' }
+  { ja: '制度上の要件の確認', en: 'Checking the requirements set by the program' },
+  { ja: '送出国での候補者の選抜', en: 'Selection of candidates in the sending country' },
+  { ja: '入国前の講習・日本語学習', en: 'Pre-entry training and Japanese-language study' },
+  { ja: '入国後の講習', en: 'Post-entry training' },
+  { ja: '実習実施者のもとでの技能実習', en: 'Technical intern training at the implementing organization' }
 ];
 
 export default function TitPage({ params: { locale } }: { params: { locale: string } }) {
@@ -56,7 +61,12 @@ function TitContent() {
       {/* Industries */}
       <section className="bg-slate-50 py-20 lg:py-28">
         <div className="container-wide space-y-12">
-          <span className="heading-eyebrow">{t('industriesTitle')}</span>
+          <div className="space-y-3">
+            <span className="heading-eyebrow">{t('industriesTitle')}</span>
+            <p className="max-w-3xl text-sm leading-relaxed text-slate-500">
+              {t('industriesNote')}
+            </p>
+          </div>
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {industries.map(({ key, Icon, ja, en }) => (
               <div key={key} className="group flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 transition hover:border-primary-200 hover:shadow-md">
@@ -75,7 +85,10 @@ function TitContent() {
       {/* Flow */}
       <section className="py-20 lg:py-28">
         <div className="container-wide space-y-12">
-          <span className="heading-eyebrow">{t('flowTitle')}</span>
+          <div className="space-y-3">
+            <span className="heading-eyebrow">{t('flowTitle')}</span>
+            <p className="max-w-3xl text-sm leading-relaxed text-slate-500">{t('flowNote')}</p>
+          </div>
           <div className="grid gap-4 md:grid-cols-5">
             {flow.map((step, i) => (
               <div key={i} className="relative">
@@ -123,6 +136,8 @@ function TitContent() {
           </div>
         </div>
       </section>
+
+      <SystemDisclaimer namespace="tit" />
     </>
   );
 }

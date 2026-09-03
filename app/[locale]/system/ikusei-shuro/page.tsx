@@ -1,6 +1,7 @@
 import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/common/page-header';
+import { SystemDisclaimer } from '@/components/common/system-disclaimer';
 import { TrendingUp, MessagesSquare, Users } from 'lucide-react';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
@@ -9,10 +10,10 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 }
 
 const timeline = [
-  { year: '2026', ja: '関係省令・指針の整備', en: 'Regulations and guidelines published' },
-  { year: '2027 H1', ja: '育成就労制度 施行', en: 'Ikusei-Shuro program launches' },
-  { year: '2027 H2', ja: '新規受入の本格開始', en: 'Full-scale new intake' },
-  { year: '〜2030', ja: '技能実習からの完全移行完了', en: 'Full transition from Technical Intern Training' }
+  { year: '2024', ja: '関連法の成立', en: 'Related legislation enacted' },
+  { year: '2026', ja: '関係省令・指針の整備', en: 'Ministerial ordinances and guidelines prepared' },
+  { year: '2027', ja: '育成就労制度の施行（予定）', en: 'Ikusei-Shuro program takes effect (planned)' },
+  { year: '施行後', ja: '技能実習制度からの移行', en: 'Transition from the Technical Intern Training program' }
 ];
 
 export default function SswPage({ params: { locale } }: { params: { locale: string } }) {
@@ -27,8 +28,10 @@ function SswContent({ locale }: { locale: 'ja' | 'en' }) {
   const diffHeader = (t.raw('diff.header') as string[]) ?? [];
   const diffRows = (t.raw('diff.rows') as string[][]) ?? [];
 
-  const benefitKeys = ['long', 'skill', 'stable'] as const;
-  const BenefitIcons = { long: TrendingUp, skill: MessagesSquare, stable: Users } as const;
+  // 「企業様のメリット」(chào bán dịch vụ) đã đổi thành 「制度のポイント」
+  // — mô tả nội dung chế độ ở thể trung lập.
+  const pointKeys = ['period', 'transfer', 'japanese'] as const;
+  const PointIcons = { period: TrendingUp, transfer: Users, japanese: MessagesSquare } as const;
 
   return (
     <>
@@ -75,23 +78,23 @@ function SswContent({ locale }: { locale: 'ja' | 'en' }) {
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Points */}
       <section className="py-20 lg:py-28">
         <div className="container-wide space-y-10">
-          <span className="heading-eyebrow">{t('benefitsTitle')}</span>
+          <span className="heading-eyebrow">{t('pointsTitle')}</span>
           <div className="grid gap-6 md:grid-cols-3">
-            {benefitKeys.map((k) => {
-              const Icon = BenefitIcons[k];
+            {pointKeys.map((k) => {
+              const Icon = PointIcons[k];
               return (
                 <div key={k} className="rounded-3xl border border-slate-100 bg-gradient-to-br from-white to-primary-50/50 p-7">
                   <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-accent-500 text-white">
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mb-3 text-lg font-bold text-slate-900">
-                    {t(`benefits.${k}.title`)}
+                    {t(`points.${k}.title`)}
                   </h3>
                   <p className="text-sm leading-relaxed text-slate-600">
-                    {t(`benefits.${k}.desc`)}
+                    {t(`points.${k}.desc`)}
                   </p>
                 </div>
               );
@@ -103,7 +106,12 @@ function SswContent({ locale }: { locale: 'ja' | 'en' }) {
       {/* Schedule */}
       <section className="bg-slate-50 py-20 lg:py-28">
         <div className="container-tight space-y-10">
-          <span className="heading-eyebrow">{t('scheduleTitle')}</span>
+          <div className="space-y-3">
+            <span className="heading-eyebrow">{t('scheduleTitle')}</span>
+            <p className="max-w-3xl text-sm leading-relaxed text-slate-500">
+              {t('scheduleNote')}
+            </p>
+          </div>
           <ol className="relative space-y-6 border-l-2 border-primary-200 pl-6">
             {timeline.map((step) => (
               <li key={step.year} className="relative">
@@ -115,6 +123,8 @@ function SswContent({ locale }: { locale: 'ja' | 'en' }) {
           </ol>
         </div>
       </section>
+
+      <SystemDisclaimer namespace="ssw" />
     </>
   );
 }

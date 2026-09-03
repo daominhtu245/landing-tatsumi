@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/common/page-header';
 import { PostCard } from '@/components/blog/post-card';
-import { getAllPosts, type PostCategory } from '@/content/posts';
+import { getAllPosts, getUsedCategories, type PostCategory } from '@/content/posts';
 import { cn } from '@/lib/utils';
 
 type Filter = 'all' | PostCategory;
@@ -19,7 +19,10 @@ export default function NewsPage() {
     return filter === 'all' ? all : all.filter((p) => p.category === filter);
   }, [filter]);
 
-  const filters: Filter[] = ['all', 'info', 'blog', 'event'];
+  // Chỉ hiện bộ lọc cho category thực sự có bài — tránh tab rỗng
+  // khi 9 bài viết cũ đã được gỡ.
+  const used = getUsedCategories();
+  const filters: Filter[] = used.length > 1 ? ['all', ...used] : [];
 
   return (
     <>
@@ -27,6 +30,7 @@ export default function NewsPage() {
 
       <section className="py-16 lg:py-20">
         <div className="container-wide space-y-10">
+          {filters.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {filters.map((f) => (
               <button
@@ -43,6 +47,7 @@ export default function NewsPage() {
               </button>
             ))}
           </div>
+          )}
 
           {posts.length === 0 ? (
             <p className="rounded-2xl border border-slate-100 bg-slate-50 p-12 text-center text-slate-500">
