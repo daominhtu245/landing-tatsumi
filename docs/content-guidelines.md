@@ -45,6 +45,9 @@ giữa "viết cho hay" và "viết cho đúng" — luôn chọn đúng.
   > **được phép** — miễn là `alt` mô tả đúng nội dung ảnh và ảnh không đặt kèm
   > chú thích khẳng định đó là hoạt động của tổ chức. Cấm là khi ảnh + chú thích
   > tạo ra tuyên bố sai, VD 6 ảnh stock kèm 「実習生の成長を毎週更新中」.
+
+- Ảnh phải **tự host** trong `public/images/`, không hotlink từ CDN ngoài —
+  xem `public/images/README.md`.
 - Link SNS trỏ tới trang chủ dịch vụ thay vì tài khoản thật của tổ chức
 
 ### Tài liệu chỉ được công khai sau khi có phép

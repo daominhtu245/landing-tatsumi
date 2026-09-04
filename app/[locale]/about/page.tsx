@@ -50,11 +50,17 @@ function AboutContent() {
         <div className="container-tight grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
           {/* Ảnh thắng cảnh Hiroshima (厳島神社 大鳥居) — ảnh trang trí gắn với
               địa phương, alt mô tả đúng nội dung ảnh, không ngụ ý là ảnh hoạt
-              động của tổ chức. Thay bằng ảnh thật của văn phòng khi có. */}
+              động của tổ chức. Tự host trong public/images/ (xem README ở đó).
+              Thay bằng ảnh thật của văn phòng khi có. */}
           <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-gradient-to-br from-primary-100 to-accent-100">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?auto=format&fit=crop&w=800&h=1000&q=80"
+              src="/images/about-miyajima-torii.jpg"
+              srcSet="/images/about-miyajima-torii.jpg 1x, /images/about-miyajima-torii@2x.jpg 2x"
+              width={800}
+              height={1000}
+              loading="lazy"
+              decoding="async"
               alt={locale === 'ja' ? '広島・宮島の厳島神社 大鳥居' : 'The great torii of Itsukushima Shrine, Miyajima, Hiroshima'}
               className="h-full w-full object-cover"
             />

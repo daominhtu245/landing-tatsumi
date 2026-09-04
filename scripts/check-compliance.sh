@@ -73,7 +73,8 @@ check ERROR 'example\.(jp|com)'                 'Domain giả'
 check ERROR 'https://(www\.)?instagram\.com"'   'Link Instagram rỗng'
 check ERROR 'https://(www\.)?facebook\.com"'    'Link Facebook rỗng'
 check ERROR 'https://(www\.)?linkedin\.com"'    'Link LinkedIn rỗng'
-check WARN  'images\.unsplash\.com'             'Ảnh stock — kiểm tra xem có ngụ ý hoạt động thật không'
+check WARN  'images\.unsplash\.com'             'Ảnh stock Unsplash — kiểm tra xem có ngụ ý hoạt động thật không'
+check WARN  'src="https?://'                    'Hotlink tài nguyên ngoài — nên tự host trong public/images/'
 
 echo "── 5. Diễn đạt tuyển dụng / môi giới ───────────────────────"
 check ERROR '(実習生|技能実習生)を(募集|派遣|送り出)'  '募集・派遣表現'

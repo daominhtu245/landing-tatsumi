@@ -53,7 +53,7 @@
 
 ### 🟠 Bịa hoạt động / tài sản giả (4/4)
 
-R17 SocialFeed (6 ảnh stock + link Instagram rỗng) → data-driven, `SOCIAL = null` · R18 3 icon SNS rỗng ở footer → ẩn bằng cờ · R19 2 bài blog bịa kinh nghiệm → đã gỡ · R20 ảnh 大鳥居 ở mục 代表挨拶 → **giữ nguyên** (ảnh thắng cảnh Hiroshima, alt mô tả đúng, không ngụ ý là ảnh hoạt động của tổ chức)
+R17 SocialFeed (6 ảnh stock + link Instagram rỗng) → data-driven, `SOCIAL = null` · R18 3 icon SNS rỗng ở footer → ẩn bằng cờ · R19 2 bài blog bịa kinh nghiệm → đã gỡ · R20 ảnh 大鳥居 ở mục 代表挨拶 → **giữ nguyên**, chuyển sang tự host `public/images/` (ảnh thắng cảnh Hiroshima, alt mô tả đúng, không ngụ ý là ảnh hoạt động của tổ chức)
 
 ### 🔴 Sai thông tin / kỹ thuật (10/10)
 
