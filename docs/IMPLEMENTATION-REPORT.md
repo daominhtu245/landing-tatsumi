@@ -53,7 +53,7 @@
 
 ### 🟠 Bịa hoạt động / tài sản giả (4/4)
 
-R17 SocialFeed (6 ảnh stock + link Instagram rỗng) → data-driven, `SOCIAL = null` · R18 3 icon SNS rỗng ở footer → ẩn bằng cờ · R19 2 bài blog bịa kinh nghiệm → đã gỡ · R20 ảnh stock 大鳥居 ở mục 代表挨拶 → khối màu theo design system
+R17 SocialFeed (6 ảnh stock + link Instagram rỗng) → data-driven, `SOCIAL = null` · R18 3 icon SNS rỗng ở footer → ẩn bằng cờ · R19 2 bài blog bịa kinh nghiệm → đã gỡ · R20 ảnh 大鳥居 ở mục 代表挨拶 → **giữ nguyên** (ảnh thắng cảnh Hiroshima, alt mô tả đúng, không ngụ ý là ảnh hoạt động của tổ chức)
 
 ### 🔴 Sai thông tin / kỹ thuật (10/10)
 
@@ -149,7 +149,7 @@ Không chặn việc nộp hồ sơ. Site hiện hiển thị 「準備中」 ch
 ### Nội dung
 - Mô tả cụ thể 共同購買 (đang mặc定 chung chung + 「準備中」)
 - Logo chính thức (đang dùng SVG placeholder)
-- Ảnh thật của tổ chức
+- Ảnh thật của văn phòng/tổ chức (hiện `/about` dùng ảnh thắng cảnh Hiroshima làm ảnh trang trí)
 - Tài khoản SNS thật (nếu có)
 
 ### Câu hỏi quan trọng nhất

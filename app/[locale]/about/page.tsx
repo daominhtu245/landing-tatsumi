@@ -48,25 +48,16 @@ function AboutContent() {
       {/* Greeting */}
       <section className="py-20 lg:py-28">
         <div className="container-tight grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
-          {/* Chưa có ảnh thật của tổ chức → dùng khối màu theo design system,
-              không dùng ảnh stock để tránh gợi ý hoạt động không có thật. */}
-          <div
-            className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-gradient-to-br from-primary-100 via-white to-accent-100"
-            aria-hidden
-          >
-            <svg
-              className="absolute left-1/2 top-1/2 h-2/3 w-2/3 -translate-x-1/2 -translate-y-1/2 text-primary-600/20"
-              viewBox="0 0 400 600"
-              fill="none"
-            >
-              <path
-                d="M 50 50 Q 150 100, 100 200 T 200 400 T 100 550"
-                stroke="currentColor"
-                strokeWidth="60"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </svg>
+          {/* Ảnh thắng cảnh Hiroshima (厳島神社 大鳥居) — ảnh trang trí gắn với
+              địa phương, alt mô tả đúng nội dung ảnh, không ngụ ý là ảnh hoạt
+              động của tổ chức. Thay bằng ảnh thật của văn phòng khi có. */}
+          <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-gradient-to-br from-primary-100 to-accent-100">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?auto=format&fit=crop&w=800&h=1000&q=80"
+              alt={locale === 'ja' ? '広島・宮島の厳島神社 大鳥居' : 'The great torii of Itsukushima Shrine, Miyajima, Hiroshima'}
+              className="h-full w-full object-cover"
+            />
           </div>
           <div className="space-y-5">
             <span className="heading-eyebrow">{t('greetingTitle')}</span>

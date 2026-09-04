@@ -40,6 +40,11 @@ giữa "viết cho hay" và "viết cho đúng" — luôn chọn đúng.
 - Bài viết mô tả thực tập sinh, hiện trường, sự kiện **chưa từng diễn ra**
 - 導入事例 với khách hàng không có thật
 - Ảnh stock đặt ở vị trí gợi ý là ảnh hoạt động thật của tổ chức
+
+  > **Ranh giới:** ảnh trang trí gắn với địa phương (VD 厳島神社 大鳥居 ở `/about`)
+  > **được phép** — miễn là `alt` mô tả đúng nội dung ảnh và ảnh không đặt kèm
+  > chú thích khẳng định đó là hoạt động của tổ chức. Cấm là khi ảnh + chú thích
+  > tạo ra tuyên bố sai, VD 6 ảnh stock kèm 「実習生の成長を毎週更新中」.
 - Link SNS trỏ tới trang chủ dịch vụ thay vì tài khoản thật của tổ chức
 
 ### Tài liệu chỉ được công khai sau khi có phép
