@@ -1,10 +1,14 @@
 import { useTranslations } from 'next-intl';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from '@/lib/navigation';
+import { isApplying } from '@/lib/site-config';
 
 export function Hero() {
   const t = useTranslations('hero');
   const brand = useTranslations('brand');
+  // Badge chỉ dành cho giai đoạn 許可申請中. Sau khi có phép sẽ ẩn cho đến khi
+  // chốt câu chữ mới — xem docs/after-approval-checklist.md.
+  const badges = isApplying ? (t.raw('badges.applying') as string[]) : [];
 
   return (
     <section className="relative overflow-hidden">
@@ -61,12 +65,14 @@ export function Hero() {
             </Link>
           </div>
 
-          {/* Trust badges */}
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-4 text-xs text-slate-500">
-            <span>✓ OTIT 認可</span>
-            <span>✓ 24/7 多言語サポート</span>
-            <span>✓ 育成就労 対応</span>
-          </div>
+          {/* Status badges */}
+          {badges.length > 0 && (
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-4 text-xs text-slate-500">
+              {badges.map((b) => (
+                <span key={b}>✓ {b}</span>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Right visual — kanji block + decoration */}

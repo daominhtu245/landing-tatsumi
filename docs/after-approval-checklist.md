@@ -22,6 +22,10 @@ Một dòng này tự động làm 4 việc:
 | `FEATURES.publicDocuments` | `false` → `/licensing` hiện danh sách「許可取得後に公開」 | `true` → khối đó ẩn, thay bằng link tài liệu thật |
 | `FEATURES.recruitment` | `false` | `true` |
 | `SystemDisclaimer` | hiện dòng「当該事業は現在、許可申請中です」ở 3 trang chế độ | ẩn dòng đó, giữ phần ghi nguồn |
+| Badge ở hero trang chủ | hiện `hero.badges.applying` (「監理支援機関 許可申請中」…) | **ẩn** — thêm `hero.badges.approved` rồi sửa `components/sections/hero.tsx` nếu muốn hiện lại |
+
+> ⚠️ Badge sau khi có phép: ghi đúng tên giấy phép và 許可番号 nếu cần.
+> **Không** dùng 「OTIT 認可」: 監理支援機関 không được OTIT "認可" (feedback 22-09).
 
 Sau khi đổi, chạy:
 
@@ -70,13 +74,14 @@ Theo quy định, 3 tài liệu này **chỉ được công khai sau khi có gi�
 ## Bước 4 — Cập nhật thông tin tổ chức
 
 `lib/site-config.ts` → `ORG_PROFILE`. Điền các mục còn `null` (đang hiển thị
-「準備中」 trên `/about`):
+「準備中」 trên `/about`). Mục nào KH không muốn công khai thì đặt `false` để ẩn dòng.
+Mọi giá trị phải khớp chữ với 登記事項証明書 / 定款 (ví dụ bên dưới là **giả**):
 
 ```ts
 established: '○○年○月○日',
 capital: '○○○万円',
 memberCount: '○○社',
-representative: '永井伸枝',   // ← cần khách hàng xác nhận
+representative: '○○ ○○',     // ← theo 登記事項証明書
 businessArea: '広島県',
 businessHours: '平日 9:00〜18:00',
 ```

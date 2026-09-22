@@ -49,6 +49,7 @@ check ERROR '監理支援機関(です|として)'        'Tự nhận là 監�
 check ERROR '監理団体(です|として|許可)'        'Tự nhận là 監理団体 / nhắc 監理団体許可'
 check ERROR '許可(取得済|を受けました|の更新)'  'Tuyên bố đã có / đã gia hạn giấy phép'
 check ERROR '(認定|登録)(済|されています)'      'Tuyên bố đã được công nhận / đăng ký'
+check ERROR 'OTIT ?認可|機構 ?認可'              'Ghi 「OTIT 認可」 — dễ bị hiểu là đã có phép (feedback 22-09)'
 
 echo "── 2. Cam kết dịch vụ chưa được phép ───────────────────────"
 check ERROR '受入実績'                          'Tuyên bố có thành tích tiếp nhận'
@@ -57,6 +58,7 @@ check ERROR 'お約束します'                      'Cam kết dịch vụ'
 check ERROR '(保証|確約)(します|いたします)'     'Bảo đảm / cam kết chắc chắn'
 check ERROR '24時間.*(サポート|対応)'            'Cam kết mức dịch vụ 24h'
 check ERROR '365日'                             'Cam kết mức dịch vụ 365 ngày'
+check ERROR '24/7'                              'Cam kết mức dịch vụ 24/7'
 check ERROR 'お見積り(は)?無料'                  'Báo giá dịch vụ chưa được phép'
 
 echo "── 3. Tài liệu chỉ được công khai sau khi có phép ──────────"
@@ -80,6 +82,11 @@ echo "── 5. Diễn đạt tuyển dụng / môi giới ───────
 check ERROR '(実習生|技能実習生)を(募集|派遣|送り出)'  '募集・派遣表現'
 check WARN  '応募'                              'Còn dấu vết 募集表現 — kiểm tra ngữ cảnh'
 check WARN  '導入事例'                          'Có 導入事例 — cần là khách hàng thật'
+
+echo "── 5b. Mô tả chế độ 育成就労 đã lỗi thời ───────────────────"
+# 施行日 đã chốt là 2027年4月1日 — không dùng cách viết của giai đoạn dự thảo.
+check ERROR 'までに施行|施行される予定|施行（予定）'   'Ngày 施行 viết kiểu dự kiến (đã chốt 2027年4月1日)'
+check ERROR '方向で制度設計|とする方向|を設ける方向'   'Cách viết 「〜する方向」 của giai đoạn dự thảo'
 
 echo "── 6. Nội dung BẮT BUỘC phải có ────────────────────────────"
 # Nội dung bắt buộc phải xuất hiện ở phần HIỂN THỊ cho người dùng

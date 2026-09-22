@@ -9,11 +9,14 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   return { title: t('title'), description: t('subtitle') };
 }
 
+// Mốc thời gian theo 出入国在留管理庁「育成就労制度Q&A」(tra cứu 2026-09-22).
 const timeline = [
-  { year: '2024', ja: '関連法の成立', en: 'Related legislation enacted' },
-  { year: '2026', ja: '関係省令・指針の整備', en: 'Ministerial ordinances and guidelines prepared' },
-  { year: '2027', ja: '育成就労制度の施行（予定）', en: 'Ikusei-Shuro program takes effect (planned)' },
-  { year: '施行後', ja: '技能実習制度からの移行', en: 'Transition from the Technical Intern Training program' }
+  { date: { ja: '2024年6月', en: 'June 2024' }, ja: '改正法の成立・公布', en: 'Amending legislation enacted and promulgated' },
+  { date: { ja: '2025年', en: '2025' }, ja: '基本方針の策定、関係政省令の公布', en: 'Basic policy adopted; related cabinet and ministerial ordinances promulgated' },
+  { date: { ja: '2026年4月15日', en: 'April 15, 2026' }, ja: '監理支援機関の許可に係る施行日前申請の受付開始', en: 'Applications for Supervising & Support Organization licenses accepted ahead of implementation' },
+  { date: { ja: '2026年9月1日', en: 'September 1, 2026' }, ja: '育成就労計画の認定に係る施行日前申請の受付開始', en: 'Applications for approval of Ikusei-Shuro plans accepted ahead of implementation' },
+  { date: { ja: '2027年4月1日', en: 'April 1, 2027' }, ja: '育成就労制度の施行', en: 'Ikusei-Shuro program takes effect' },
+  { date: { ja: '施行後', en: 'After implementation' }, ja: '技能実習制度からの移行（経過措置）', en: 'Transition from the Technical Intern Training program (transitional measures)' }
 ];
 
 export default function SswPage({ params: { locale } }: { params: { locale: string } }) {
@@ -114,9 +117,9 @@ function SswContent({ locale }: { locale: 'ja' | 'en' }) {
           </div>
           <ol className="relative space-y-6 border-l-2 border-primary-200 pl-6">
             {timeline.map((step) => (
-              <li key={step.year} className="relative">
+              <li key={step.date.en} className="relative">
                 <span className="absolute -left-[34px] top-1 inline-flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br from-primary-600 to-accent-500 ring-4 ring-slate-50" />
-                <div className="text-sm font-bold text-primary-700">{step.year}</div>
+                <div className="text-sm font-bold text-primary-700">{step.date[locale]}</div>
                 <div className="text-base text-slate-800">{step[locale]}</div>
               </li>
             ))}

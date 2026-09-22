@@ -51,13 +51,18 @@ export const SITE = {
 /**
  * Thông tin CHƯA được KH xác nhận → hiển thị 「準備中」 thay vì bịa.
  * Điền giá trị thật vào đây khi KH cung cấp.
+ *   string → hiển thị giá trị
+ *   null   → hiển thị 「準備中」
+ *   false  → KH quyết định không công khai → ẩn hẳn dòng đó
  */
+type ProfileValue = string | null | false;
+
 export const ORG_PROFILE = {
-  established: null as string | null,      // 設立年月日
-  capital: null as string | null,          // 出資金
-  memberCount: null as string | null,      // 組合員数
-  representative: null as string | null,   // 代表理事
-  businessArea: null as string | null,     // 事業区域
-  businessHours: null as string | null,    // 営業時間
-  fax: null as string | null,
+  established: null as ProfileValue,      // 設立年月日
+  capital: null as ProfileValue,          // 出資金
+  memberCount: null as ProfileValue,      // 組合員数
+  representative: null as ProfileValue,   // 代表理事
+  businessArea: null as ProfileValue,     // 事業区域
+  businessHours: null as ProfileValue,    // 営業時間
+  fax: null as ProfileValue,
 } as const;

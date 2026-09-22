@@ -27,19 +27,21 @@ function AboutContent() {
   /**
    * Bảng 組合情報.
    * Mục nào khách hàng chưa xác nhận thì hiện 「準備中」 — không bịa giá trị.
+   * Mục khách hàng quyết định không công khai (false) thì ẩn hẳn dòng.
    */
-  const rows: { key: string; value: string }[] = [
+  const profile = (v: string | null | false) => (v === false ? null : v ?? tc('preparing'));
+  const rows = [
     { key: 'name', value: t('info.nameVal') },
     { key: 'address', value: address },
     { key: 'tel', value: SITE.tel },
     { key: 'email', value: SITE.email },
-    { key: 'established', value: ORG_PROFILE.established ?? tc('preparing') },
-    { key: 'capital', value: ORG_PROFILE.capital ?? tc('preparing') },
-    { key: 'memberCount', value: ORG_PROFILE.memberCount ?? tc('preparing') },
-    { key: 'representative', value: ORG_PROFILE.representative ?? tc('preparing') },
-    { key: 'businessArea', value: ORG_PROFILE.businessArea ?? tc('preparing') },
+    { key: 'established', value: profile(ORG_PROFILE.established) },
+    { key: 'capital', value: profile(ORG_PROFILE.capital) },
+    { key: 'memberCount', value: profile(ORG_PROFILE.memberCount) },
+    { key: 'representative', value: profile(ORG_PROFILE.representative) },
+    { key: 'businessArea', value: profile(ORG_PROFILE.businessArea) },
     { key: 'business', value: t('info.businessVal') }
-  ];
+  ].filter((r): r is { key: string; value: string } => r.value !== null);
 
   return (
     <>
