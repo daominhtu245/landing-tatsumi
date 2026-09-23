@@ -73,18 +73,19 @@ Theo quy định, 3 tài liệu này **chỉ được công khai sau khi có gi�
 
 ## Bước 4 — Cập nhật thông tin tổ chức
 
-`lib/site-config.ts` → `ORG_PROFILE`. Điền các mục còn `null` (đang hiển thị
-「準備中」 trên `/about`). Mục nào KH không muốn công khai thì đặt `false` để ẩn dòng.
-Mọi giá trị phải khớp chữ với 登記事項証明書 / 定款 (ví dụ bên dưới là **giả**):
+`lib/site-config.ts` → `ORG_PROFILE`. Các giá trị đã điền theo 登記/定款 (xem
+`docs/feedback-23-09-analysis.md` §I-B). Chỉ còn phải xử lý:
 
-```ts
-established: '○○年○月○日',
-capital: '○○○万円',
-memberCount: '○○社',
-representative: '○○ ○○',     // ← theo 登記事項証明書
-businessArea: '広島県',
-businessHours: '平日 9:00〜18:00',
-```
+| Trường | Trạng thái 2026-09-23 | Việc sau khi có phép |
+|---|---|---|
+| `established`, `capital`, `representative` | Đã điền theo 登記 | Không đổi |
+| `memberCount` | `false` (KH không công khai) | Chỉ đổi nếu KH muốn |
+| `businessArea` | `false` → dòng đang bị ẩn | **Phải điền** — chốt giữa 「広島県の区域」(申請書) và 「広島県呉市及び安芸郡熊野町の区域」(登記/定款); điền xong dòng tự hiện lại |
+| `businessHours` | 「平日 9:00〜18:00」 / "Weekdays 9:00–18:00" | Không đổi |
+| `fax` | `false` | Điền khi có |
+
+Ngoài ra, ở `messages/{ja,en}.json` → `about.info.businessVal`, bỏ dòng chú thích
+「※（2）〜（4）の事業は…現時点では行っておりません。」 sau khi có phép.
 
 ---
 
