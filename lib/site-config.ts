@@ -49,20 +49,40 @@ export const SITE = {
 } as const;
 
 /**
- * Thông tin CHƯA được KH xác nhận → hiển thị 「準備中」 thay vì bịa.
- * Điền giá trị thật vào đây khi KH cung cấp.
- *   string → hiển thị giá trị
- *   null   → hiển thị 「準備中」
- *   false  → KH quyết định không công khai → ẩn hẳn dòng đó
+ * Thông tin tổ chức lấy từ giấy tờ gốc (thư mục `23-09/`):
+ *   - 履歴事項全部証明書 (広島法務局, 令和8年7月28日)
+ *   - 定款 (11 trang, 60 điều)
+ * Xem `docs/feedback-23-09-analysis.md` §I-B.
+ *
+ *   string / {ja,en} → hiển thị giá trị
+ *   null             → hiển thị 「準備中」
+ *   false            → KH quyết định không công khai → ẩn hẳn dòng đó
  */
-type ProfileValue = string | null | false;
+export type ProfileValue = string | { ja: string; en: string } | null | false;
+
+/** Lấy chuỗi hiển thị theo ngôn ngữ. `null` = không hiển thị giá trị nào. */
+export function profileText(v: ProfileValue, locale: 'ja' | 'en'): string | null {
+  if (v === null || v === false) return null;
+  return typeof v === 'string' ? v : v[locale];
+}
 
 export const ORG_PROFILE = {
-  established: null as ProfileValue,      // 設立年月日
-  capital: null as ProfileValue,          // 出資金
-  memberCount: null as ProfileValue,      // 組合員数
-  representative: null as ProfileValue,   // 代表理事
-  businessArea: null as ProfileValue,     // 事業区域
-  businessHours: null as ProfileValue,    // 営業時間
-  fax: null as ProfileValue,
+  /** 登記: 法人成立の年月日 */
+  established: { ja: '令和8年5月28日', en: 'May 28, 2026' } as ProfileValue,
+  /** 登記: 払込済出資総額（出資1口 1万円 × 600口） */
+  capital: { ja: '600万円', en: 'JPY 6,000,000' } as ProfileValue,
+  /** KH 23-09: không công khai (số thay đổi theo thời gian) */
+  memberCount: false as ProfileValue,
+  /** 登記: 役員に関する事項 — địa chỉ nhà riêng trong 登記 KHÔNG được đăng */
+  representative: '永井　伸枝' as ProfileValue,
+  /**
+   * ⏸️ ẨN DÒNG cho đến khi KH chốt — 申請書 ghi 「広島県の区域」 nhưng 登記/定款
+   * điều 3 ghi 「広島県呉市及び安芸郡熊野町の区域」.
+   * Xem docs/feedback-23-09-analysis.md §2.6. Điền giá trị thật là dòng hiện lại.
+   */
+  businessArea: false as ProfileValue,
+  /** KH 23-09: 平日 9時〜18時 */
+  businessHours: { ja: '平日 9:00〜18:00', en: 'Weekdays 9:00–18:00' } as ProfileValue,
+  /** KH 23-09: chưa có FAX */
+  fax: false as ProfileValue,
 } as const;

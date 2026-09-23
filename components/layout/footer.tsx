@@ -2,7 +2,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/lib/navigation';
 import { Logo } from '@/components/common/logo';
 import { Mail, MapPin, Phone, Clock, type LucideIcon } from 'lucide-react';
-import { FEATURES, SITE, ORG_PROFILE } from '@/lib/site-config';
+import { FEATURES, SITE, ORG_PROFILE, profileText } from '@/lib/site-config';
 
 /** Bật lại cùng lúc với FEATURES.socialLinks, sau khi có tài khoản thật. */
 const socialLinks: { Icon: LucideIcon; href: string; label: string }[] = [];
@@ -76,10 +76,12 @@ export function Footer() {
               <a href={`mailto:${SITE.email}`} className="hover:text-primary-700">{SITE.email}</a>
             </li>
             {/* Giờ làm việc: chỉ hiển thị khi KH đã xác nhận (ORG_PROFILE.businessHours) */}
-            {ORG_PROFILE.businessHours && (
+            {profileText(ORG_PROFILE.businessHours, locale) && (
               <li className="flex items-center gap-2">
                 <Clock className="h-4 w-4 shrink-0 text-primary-600" />
-                <span>{t('footer.labels.hours')}: {ORG_PROFILE.businessHours}</span>
+                <span>
+                  {t('footer.labels.hours')}: {profileText(ORG_PROFILE.businessHours, locale)}
+                </span>
               </li>
             )}
           </ul>

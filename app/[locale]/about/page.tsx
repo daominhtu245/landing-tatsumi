@@ -2,7 +2,7 @@ import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import { useLocale, useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/common/page-header';
 import { Compass, Target, Sparkles } from 'lucide-react';
-import { SITE, ORG_PROFILE } from '@/lib/site-config';
+import { SITE, ORG_PROFILE, profileText } from '@/lib/site-config';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
   const t = await getTranslations({ locale, namespace: 'about' });
@@ -29,7 +29,8 @@ function AboutContent() {
    * Mục nào khách hàng chưa xác nhận thì hiện 「準備中」 — không bịa giá trị.
    * Mục khách hàng quyết định không công khai (false) thì ẩn hẳn dòng.
    */
-  const profile = (v: string | null | false) => (v === false ? null : v ?? tc('preparing'));
+  const profile = (v: (typeof ORG_PROFILE)[keyof typeof ORG_PROFILE]) =>
+    v === false ? null : profileText(v, locale) ?? tc('preparing');
   const rows = [
     { key: 'name', value: t('info.nameVal') },
     { key: 'address', value: address },
@@ -72,9 +73,9 @@ function AboutContent() {
             <p className="text-lg leading-relaxed text-slate-700 lg:text-xl">
               {t('greetingBody')}
             </p>
-            {ORG_PROFILE.representative && (
+            {profileText(ORG_PROFILE.representative, locale) && (
               <p className="text-sm font-semibold text-primary-700">
-                {t('greetingNameLabel')} {ORG_PROFILE.representative}
+                {t('greetingNameLabel')} {profileText(ORG_PROFILE.representative, locale)}
               </p>
             )}
           </div>

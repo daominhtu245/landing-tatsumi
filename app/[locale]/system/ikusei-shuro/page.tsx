@@ -2,7 +2,7 @@ import { unstable_setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { PageHeader } from '@/components/common/page-header';
 import { SystemDisclaimer } from '@/components/common/system-disclaimer';
-import { TrendingUp, MessagesSquare, Users } from 'lucide-react';
+import { TrendingUp, MessagesSquare, Users, ArrowRightLeft } from 'lucide-react';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
   const t = await getTranslations({ locale, namespace: 'ssw' });
@@ -31,10 +31,14 @@ function SswContent({ locale }: { locale: 'ja' | 'en' }) {
   const diffHeader = (t.raw('diff.header') as string[]) ?? [];
   const diffRows = (t.raw('diff.rows') as string[][]) ?? [];
 
-  // 「企業様のメリット」(chào bán dịch vụ) đã đổi thành 「制度のポイント」
-  // — mô tả nội dung chế độ ở thể trung lập.
-  const pointKeys = ['period', 'transfer', 'japanese'] as const;
-  const PointIcons = { period: TrendingUp, transfer: Users, japanese: MessagesSquare } as const;
+  // 「育成就労制度の主な特徴」 — 4 mục theo văn bản KH gửi 23-09.
+  const pointKeys = ['period', 'continuity', 'transfer', 'japanese'] as const;
+  const PointIcons = {
+    period: TrendingUp,
+    continuity: ArrowRightLeft,
+    transfer: Users,
+    japanese: MessagesSquare
+  } as const;
 
   return (
     <>
@@ -85,7 +89,7 @@ function SswContent({ locale }: { locale: 'ja' | 'en' }) {
       <section className="py-20 lg:py-28">
         <div className="container-wide space-y-10">
           <span className="heading-eyebrow">{t('pointsTitle')}</span>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {pointKeys.map((k) => {
               const Icon = PointIcons[k];
               return (
@@ -124,6 +128,25 @@ function SswContent({ locale }: { locale: 'ja' | 'en' }) {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      {/* Trạng thái của tổ chức + hỗ trợ ngôn ngữ — văn bản KH gửi 23-09.
+          Đặt ngay trên dòng lưu ý cuối trang để người đọc thấy ngay là chưa có phép. */}
+      <section className="py-20 lg:py-28">
+        <div className="container-tight grid gap-10 md:grid-cols-2">
+          <div className="space-y-5">
+            <span className="heading-eyebrow">{t('orgTitle')}</span>
+            <p className="whitespace-pre-line text-base leading-relaxed text-slate-700">
+              {t('orgBody')}
+            </p>
+          </div>
+          <div className="space-y-5">
+            <span className="heading-eyebrow">{t('supportTitle')}</span>
+            <p className="whitespace-pre-line text-base leading-relaxed text-slate-700">
+              {t('supportBody')}
+            </p>
+          </div>
         </div>
       </section>
 

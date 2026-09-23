@@ -42,7 +42,7 @@
     "badges": {
       "applying": [
         "Supervising & Support Organization license: application in progress",
-        "Multilingual support structure",
+        "Khmer (Cambodian) language support",
         "Preparing for the Ikusei-Shuro program"
       ]
     }
@@ -160,7 +160,7 @@
       "representative": "Representative Director",
       "businessArea": "Area of operation",
       "business": "Activities",
-      "businessVal": "Joint purchasing and other activities set out in our articles of association"
+      "businessVal": "(1) Joint purchasing of goods required by members\n(2) Joint acceptance of foreign technical intern trainees for members, and employment placement relating to such acceptance\n(3) Joint acceptance of Ikusei-Shuro foreign nationals for members, and employment placement relating to such acceptance\n(4) Support for Specified Skilled Worker foreign nationals on behalf of members\n(5) Education and information services to improve members’ management and technology, or to disseminate knowledge relating to the cooperative’s activities\n(6) Member welfare programmes\n(7) Activities incidental to the above\n\n* Activities (2) to (4) are to begin only after authorization is granted by the relevant authorities. We do not carry them out at present."
     },
     "businessNote": "* The supervising and support business relating to the Technical Intern Training, Ikusei-Shuro and Specified Skilled Worker programs is currently under application for authorization."
   },
@@ -231,7 +231,7 @@
     "title": "Ikusei-Shuro",
     "subtitle": "A general overview of the program",
     "overviewTitle": "What is the Ikusei-Shuro program?",
-    "overviewBody": "The Ikusei-Shuro program was created to replace the Technical Intern Training program and takes effect on April 1, 2027. Through three years of employment in principle, it aims to develop workers to the skill level required for Specified Skilled Worker (i), while securing human resources in the relevant fields.",
+    "overviewBody": "The Ikusei-Shuro program was created to develop and secure foreign human resources, and takes effect on April 1, 2027. Through three years of employment in principle, it develops workers to the skill level of Specified Skilled Worker (i), while securing human resources in fields facing labour shortages in Japan.",
     "diffTitle": "Main differences from Technical Intern Training",
     "diff": {
       "header": [
@@ -253,34 +253,42 @@
         [
           "Changing employer",
           "Not permitted in principle",
-          "Permitted at the person's own initiative if certain requirements are met"
+          "Permitted where circumstances leave no alternative, and also at the person’s own initiative if certain requirements are met"
         ],
         [
           "Japanese-language requirement",
           "Varies by occupation",
-          "Pass an A1-level test before starting work, and an A2-level test to move to SSW (i), etc."
+          "Levels and tests are set for each industrial field and job category"
         ]
       ]
     },
-    "pointsTitle": "Key points of the program",
+    "pointsTitle": "Main features of the program",
     "points": {
       "period": {
-        "title": "Period of stay",
-        "desc": "Through three years of employment in principle, the program aims to develop workers to the skill level of Specified Skilled Worker (i)."
+        "title": "Three years of development in principle",
+        "desc": "Through three years of employment in principle, workers improve their skills and Japanese-language ability and are developed to the level of Specified Skilled Worker (i)."
+      },
+      "continuity": {
+        "title": "Continuity with the Specified Skilled Worker system",
+        "desc": "The program is designed with continuity to the Specified Skilled Worker system. By acquiring the required skills and Japanese-language ability through Ikusei-Shuro and meeting the necessary requirements, a person can move on to Specified Skilled Worker (i)."
       },
       "transfer": {
-        "title": "Changing employer",
-        "desc": "A person may change employer at their own initiative if, among other conditions, they have worked for the same employer longer than the period set for each field (between one and two years), have attained the skill and Japanese-language levels set for each field, and the new employer meets certain requirements."
+        "title": "Changing employer at the person’s own initiative",
+        "desc": "In addition to transfers where circumstances leave no alternative, a person may change employer at their own initiative if certain requirements are met: remaining within the same job category, having passed the transfer-restriction period set for each field (set between one and two years by the field-specific operational policy), and having attained a certain level of skill and Japanese-language ability. The specific requirements differ according to the operational policy for each industrial field."
       },
       "japanese": {
-        "title": "Language requirements",
-        "desc": "Workers must pass a Japanese test at A1 level or above before starting work (or complete equivalent training), and a test at A2 level or above to move to Specified Skilled Worker (i), so that language ability improves step by step. Some fields may set higher levels."
+        "title": "Improving Japanese-language ability and skills",
+        "desc": "The program values not only the acquisition of skills through work but also improvement in Japanese-language ability. The required levels of skill and language ability, and the relevant tests, are set according to the industrial field and job category."
       }
     },
     "scheduleTitle": "Timeline to implementation",
     "scheduleNote": "* Based on information published as of September 2026. Please refer to publications by the relevant authorities for the latest details.",
     "sourceNote": "Source: compiled as general information from materials published by the Immigration Services Agency (including its Ikusei-Shuro Q&A) and the Ministry of Health, Labour and Welfare (as of September 2026).",
-    "disclaimer": "This page provides a general explanation of the program. It does not indicate that this cooperative conducts a supervising and support business; that business is currently under application for authorization."
+    "disclaimer": "This page provides a general explanation of the program. It does not indicate that this cooperative conducts a supervising and support business; that business is currently under application for authorization.",
+    "orgTitle": "Where Tatsumi Cooperative stands today",
+    "orgBody": "Towards the start of the Ikusei-Shuro program, Tatsumi Cooperative is applying for a Supervising & Support Organization license and building its support structure for accepting workers.\nThe supervising and support business is currently under application for authorization, and we do not carry out the duties of a Supervising & Support Organization.\nOnce authorization is granted by the relevant authorities, we plan to begin a properly conducted supervising and support business in accordance with the law and the applicable operational guidelines.",
+    "supportTitle": "Support for foreign workers",
+    "supportBody": "So that foreign workers can work and live in Japan with peace of mind, we are building our support structure in cooperation with the companies that accept them.\nAt present we are putting in place support in Khmer (Cambodian).\nWe will expand that structure in line with future circumstances."
   },
   "ssk": {
     "title": "Specified Skilled Worker",

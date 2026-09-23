@@ -3,7 +3,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Mail, Phone, MapPin, Clock, ExternalLink } from 'lucide-react';
 import { PageHeader } from '@/components/common/page-header';
 import { ContactForm } from '@/components/forms/contact-form';
-import { SITE, ORG_PROFILE } from '@/lib/site-config';
+import { SITE, ORG_PROFILE, profileText } from '@/lib/site-config';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
   const t = await getTranslations({ locale, namespace: 'contact' });
@@ -56,11 +56,11 @@ function ContactContent() {
                     {SITE.email}
                   </a>
                 </li>
-                {ORG_PROFILE.businessHours && (
+                {profileText(ORG_PROFILE.businessHours, locale) && (
                   <li className="flex items-center gap-3">
                     <Clock className="h-4 w-4 shrink-0 text-primary-600" />
                     <span className="text-slate-700">
-                      {tf('labels.hours')}: {ORG_PROFILE.businessHours}
+                      {tf('labels.hours')}: {profileText(ORG_PROFILE.businessHours, locale)}
                     </span>
                   </li>
                 )}
