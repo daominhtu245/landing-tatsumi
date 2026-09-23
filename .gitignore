@@ -12,3 +12,6 @@ next-env.d.ts.bak
 
 # TypeScript incremental build cache
 *.tsbuildinfo
+
+# Giấy tờ gốc của KH (登記事項証明書, 定款) — chứa thông tin cá nhân, KHÔNG commit
+23-09/

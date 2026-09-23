@@ -45,7 +45,8 @@ echo "════════════════════════�
 echo
 
 echo "── 1. Mạo nhận tư cách pháp lý ─────────────────────────────"
-check ERROR '監理支援機関(です|として)'        'Tự nhận là 監理支援機関'
+# KH 23-09: cho phép câu phủ định 「監理支援機関としての業務は行っておりません」.
+check ERROR '監理支援機関(です|として)'        'Tự nhận là 監理支援機関' '行っておりません|do not carry out'
 check ERROR '監理団体(です|として|許可)'        'Tự nhận là 監理団体 / nhắc 監理団体許可'
 check ERROR '許可(取得済|を受けました|の更新)'  'Tuyên bố đã có / đã gia hạn giấy phép'
 check ERROR '(認定|登録)(済|されています)'      'Tuyên bố đã được công nhận / đăng ký'
@@ -59,6 +60,10 @@ check ERROR '(保証|確約)(します|いたします)'     'Bảo đảm / cam
 check ERROR '24時間.*(サポート|対応)'            'Cam kết mức dịch vụ 24h'
 check ERROR '365日'                             'Cam kết mức dịch vụ 365 ngày'
 check ERROR '24/7'                              'Cam kết mức dịch vụ 24/7'
+# KH 23-09: hiện chỉ hỗ trợ được tiếng Khmer → không dùng 「多言語」.
+check ERROR '多言語|[Mm]ultilingual'             'Ghi 「多言語」 — thực tế mới hỗ trợ クメール語'
+# 組合 thành lập 令和8年5月28日 → không có bề dày kinh nghiệm để nói.
+check ERROR '長年|豊富な(経験|実績)'             'Ngụ ý nhiều năm kinh nghiệm (組合 thành lập 2026-05-28)'
 check ERROR 'お見積り(は)?無料'                  'Báo giá dịch vụ chưa được phép'
 
 echo "── 3. Tài liệu chỉ được công khai sau khi có phép ──────────"
