@@ -80,7 +80,7 @@ Theo quy định, 3 tài liệu này **chỉ được công khai sau khi có gi�
 |---|---|---|
 | `established`, `capital`, `representative` | Đã điền theo 登記 | Không đổi |
 | `memberCount` | `false` (KH không công khai) | Chỉ đổi nếu KH muốn |
-| `businessArea` | `false` → dòng đang bị ẩn | **Phải điền** — chốt giữa 「広島県の区域」(申請書) và 「広島県呉市及び安芸郡熊野町の区域」(登記/定款); điền xong dòng tự hiện lại |
+| `businessArea` | 「広島県呉市及び安芸郡熊野町の区域」 (KH chốt 24-09) | Kiểm tra lại nếu 定款 được sửa 地区 |
 | `businessHours` | 「平日 9:00〜18:00」 / "Weekdays 9:00–18:00" | Không đổi |
 | `fax` | `false` | Điền khi có |
 

@@ -76,11 +76,14 @@ export const ORG_PROFILE = {
   /** 登記: 役員に関する事項 — địa chỉ nhà riêng trong 登記 KHÔNG được đăng */
   representative: '永井　伸枝' as ProfileValue,
   /**
-   * ⏸️ ẨN DÒNG cho đến khi KH chốt — 申請書 ghi 「広島県の区域」 nhưng 登記/定款
-   * điều 3 ghi 「広島県呉市及び安芸郡熊野町の区域」.
-   * Xem docs/feedback-23-09-analysis.md §2.6. Điền giá trị thật là dòng hiện lại.
+   * KH chốt 24-09: 呉市 và 安芸郡熊野町 — tức theo 定款 điều 3 / 登記 mục 地区.
+   * Ghi đúng câu chữ của 定款 (KH viết 「安芸郡熊野町および呉市」, cùng nội dung).
+   * ⚠️ 申請書 đang ghi 「広島県の区域」 → KH cần chỉnh cho khớp.
    */
-  businessArea: false as ProfileValue,
+  businessArea: {
+    ja: '広島県呉市及び安芸郡熊野町の区域',
+    en: 'Kure City and Kumano Town (Aki District), Hiroshima Prefecture'
+  } as ProfileValue,
   /** KH 23-09: 平日 9時〜18時 */
   businessHours: { ja: '平日 9:00〜18:00', en: 'Weekdays 9:00–18:00' } as ProfileValue,
   /** KH 23-09: chưa có FAX */

@@ -4,7 +4,7 @@
 |---|---|
 | Nguồn | `feedback-23-09.md` + 2 file PDF trong `23-09/` (定款, 履歴事項全部証明書) |
 | Ngày | 2026-09-23 |
-| Trạng thái | 🟡 **ĐÃ TRIỂN KHAI PHẦN LÀM ĐƯỢC NGAY (2026-09-23)** — xem PHẦN IV. Còn 事業区域 chờ khách |
+| Trạng thái | ✅ **XONG (2026-09-24)** — 事業区域 đã được KH chốt, xem PHẦN IV |
 | Liên quan | `docs/feedback-22-09-plan.md` (đợt sửa 22-09 đã xong ① và ③) |
 
 ---
@@ -363,7 +363,7 @@ Ngoài ra nêu để khách biết, không cần trả lời gấp:
 | 1 | ✅ | Badge #2 → 「クメール語（カンボジア語）対応」 / "Khmer (Cambodian) language support" |
 | 2 | ✅ | `ORG_PROFILE`: `established` 「令和8年5月28日」/"May 28, 2026", `capital` 「600万円」/"JPY 6,000,000", `representative` 「永井　伸枝」, `memberCount` = `false` (dòng đã biến mất), `businessHours` 「9:00〜18:00」, `fax` = `false`. Thêm `profileText()` để giá trị có bản JA/EN riêng |
 | 3 | ✅ | 事業内容 ghi đủ 7 mục theo 定款 điều 7 (JA + EN) + dòng 「※（2）〜（4）の事業は、関係機関の許可等を受けた後に開始する予定であり、現時点では行っておりません。」 |
-| 4 | ⏸️ | 事業区域: **ẩn hẳn dòng** (`businessArea: false`) cho đến khi KH chốt nội dung |
+| 4 | ✅ | 事業区域: KH chốt 24-09 là 呉市 + 安芸郡熊野町 → điền 「広島県呉市及び安芸郡熊野町の区域」 theo đúng câu chữ 定款 |
 | 5 | ✅ | Trang `/system/ikusei-shuro` viết lại theo văn bản khách: 概要, 4 mục 主な特徴 (thêm 特定技能制度との連続性), 2 mục mới 「たつみ協同組合の現在の状況」 và 「外国人材への支援について」 đặt ngay trên dòng lưu ý cuối trang. Bảng so sánh, timeline, disclaimer giữ nguyên. Đủ cả JA và EN |
 | 6 | ✅ | `scripts/check-compliance.sh`: chặn 「多言語」/"Multilingual", 「長年」「豊富な経験/実績」; rule 「監理支援機関として」 được nới để cho phép câu phủ định 「…業務は行っておりません」 |
 | 7 | ✅ | Rà `/business`: nội dung (共同購買 + 監理支援申請中 + 加入) không mâu thuẫn với 定款. Không sửa |
@@ -380,10 +380,25 @@ Ngoài ra nêu để khách biết, không cần trả lời gấp:
 | Thêm mục 組合員資格 | **Không thêm**, chỉ làm nếu KH yêu cầu | Nội bộ |
 | Mức A1 / A2 ở trang 育成就労 | **Giữ đúng bản KH**, không thêm A1 / A2 | Nội bộ |
 | Ngày dự kiến nộp 申請書 | Không cần hỏi | Nội bộ |
-| **Nội dung 事業区域** | ⏸️ **Vẫn chờ KH confirm** — 申請書 ghi 「広島県の区域」, 登記/定款 ghi 「広島県呉市及び安芸郡熊野町の区域」 | **KH** |
+| **Nội dung 事業区域** | ✅ KH trả lời 24-09: 「広島県安芸郡熊野町および呉市」 → tức theo 定款/登記. Web ghi đúng câu chữ 定款: 「広島県呉市及び安芸郡熊野町の区域」 | **KH** |
 
 ## Những chỗ chủ động khác với văn bản khách gửi
 
 1. **転籍**: thêm cụm 「（分野別運用方針により1年以上2年以下の範囲で定められます）」 vào phần 転籍制限期間. Nguồn: 「育成就労制度Q&A」 Q50 của 出入国在留管理庁. Phần còn lại giữ nguyên câu chữ của khách.
 2. **日本語要件**: giữ đúng văn bản khách, **không** ghi mức A1 / A2. Đã chốt nội bộ 2026-09-23: giữ nguyên bản khách.
 3. **Bảng so sánh 技能実習 ↔ 育成就労** và **timeline 6 mốc**: giữ, vì khách nói văn bản gửi là 「基本として」, không nói bỏ.
+
+---
+
+# PHẦN V — 事業区域 đã chốt (2026-09-24)
+
+Khách trả lời: 「そうですね、広島県安芸郡熊野町および呉市でお願いいたします」 — tức chọn phạm vi theo 定款 điều 3 và mục 地区 của 登記, không phải 「広島県の区域」.
+
+| | Nội dung |
+|---|---|
+| Web ghi (JA) | 広島県呉市及び安芸郡熊野町の区域 |
+| Web ghi (EN) | Kure City and Kumano Town (Aki District), Hiroshima Prefecture |
+
+Chọn cách viết của 定款 (呉市 trước, 熊野町 sau) thay vì thứ tự khách gõ trong tin nhắn, vì nội dung giống hệt nhau mà lại khớp từng chữ với 定款 và 登記 — đúng mục tiêu khách đặt ra ngay từ đầu.
+
+⚠️ **Còn một việc của khách, không phải của web:** khách từng cho biết 申請書 sẽ ghi 事業区域 là 「広島県の区域」. Giờ web và 定款 đều là 呉市 + 熊野町, nên 申請書 cần được chỉnh cho khớp trước khi nộp. Nên xác nhận lại với 行政書士.
