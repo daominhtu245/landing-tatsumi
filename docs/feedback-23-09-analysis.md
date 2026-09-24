@@ -401,4 +401,4 @@ Khách trả lời: 「そうですね、広島県安芸郡熊野町および呉
 
 Chọn cách viết của 定款 (呉市 trước, 熊野町 sau) thay vì thứ tự khách gõ trong tin nhắn, vì nội dung giống hệt nhau mà lại khớp từng chữ với 定款 và 登記 — đúng mục tiêu khách đặt ra ngay từ đầu.
 
-⚠️ **Còn một việc của khách, không phải của web:** khách từng cho biết 申請書 sẽ ghi 事業区域 là 「広島県の区域」. Giờ web và 定款 đều là 呉市 + 熊野町, nên 申請書 cần được chỉnh cho khớp trước khi nộp. Nên xác nhận lại với 行政書士.
+Ghi chú: khách từng cho biết 申請書 sẽ ghi 事業区域 là 「広島県の区域」, khác với web và 定款 (呉市 + 熊野町). **Đã quyết định 24-09: không nêu việc này với khách.** Đây là phần giấy tờ của khách, khách và 行政書士 tự nắm. Nếu sau này khách yêu cầu đổi web sang 「広島県の区域」 thì chỉ cần sửa `businessArea` trong `lib/site-config.ts`.
